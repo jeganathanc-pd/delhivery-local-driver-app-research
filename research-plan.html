@@ -156,6 +156,70 @@
         <tr><td>Performance Tab</td><td>View delivery performance metrics</td></tr>
         <tr><td>Earnings Page</td><td>Track daily/weekly earnings</td></tr>
     </table>
+
+    <h3>Driver Categories in Our System</h3>
+
+    <div class="card">
+        <h4>Tier: Star vs Non-Star (Dynamic, Performance-Based)</h4>
+        <table>
+            <tr><th>Tier</th><th>How It Works</th><th>Fleet Size</th></tr>
+            <tr><td><strong>Star</strong></td><td>High-performing drivers. Status earned through good metrics (acceptance, fulfillment, low cancellation). Earn 2-3x more per day.</td><td>~2,000–5,000 (~13-15%)</td></tr>
+            <tr><td><strong>Non-Star</strong></td><td>Default/majority tier. Lower acceptance rates, fewer deliveries, more passive usage.</td><td>~25,000–30,000 (~85%)</td></tr>
+        </table>
+        <ul>
+            <li><strong>Dynamic:</strong> Drivers move between tiers based on performance. Non-Star → Star if they improve. Star → Non-Star if they slip.</li>
+            <li><strong>Criteria:</strong> Performance-based (exact metrics TBD — likely acceptance rate, fulfillment rate, cancellation rate)</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h4>Payout Model: Flexi (Default) vs Slot / MBG (Opt-in)</h4>
+        <table>
+            <tr><th>Model</th><th>How It Works</th><th>Requirements</th><th>Fleet Share</th></tr>
+            <tr>
+                <td><strong>Flexi</strong> (default)</td>
+                <td>Work whenever, paid per order. No commitment. Can use other apps simultaneously.</td>
+                <td>None</td>
+                <td>~89-92%</td>
+            </tr>
+            <tr>
+                <td><strong>Slot / MBG</strong> (Minimum Guarantee)</td>
+                <td>Guaranteed minimum earning per day — even if they don't earn that much from orders, we pay the guarantee.</td>
+                <td>
+                    • Online 8 hrs/day in Delhivery app<br>
+                    • Cannot use other apps (exclusive)<br>
+                    • Cannot cancel orders (limited exceptions)
+                </td>
+                <td>~8-11% (declining)</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="card">
+        <h4>Combined Segments (Tier × Model)</h4>
+        <table>
+            <tr><th>Segment</th><th>Behavior</th><th>% of Fulfilled Orders</th></tr>
+            <tr><td><strong>Star Flexi</strong></td><td>Best performers at every distance. Accept more, cancel less. Voluntarily engaged.</td><td>15-20%</td></tr>
+            <tr><td><strong>Non-Star Flexi</strong></td><td>Bulk of fleet. Lower per-driver output. Many use Delhivery as backup to Porter/Rapido.</td><td>70-74%</td></tr>
+            <tr><td><strong>Slot Rider (MBG)</strong></td><td>Committed via time slots. Better at short distances (they take what comes). Declining participation.</td><td>7.5-11% (dropping)</td></tr>
+        </table>
+    </div>
+
+    <div class="card">
+        <h4>Vehicle Types</h4>
+        <table>
+            <tr><th>Vehicle</th><th>Profile</th><th>Avg Login Hrs (Non-Star / Star)</th></tr>
+            <tr><td><strong>2-wheeler</strong></td><td>Largest segment. Lowest acceptance (~4-6%). Gets most broadcasts. Most multi-app behavior.</td><td>4.64 / 5.89 hrs</td></tr>
+            <tr><td><strong>3-wheeler</strong></td><td>Best fulfillment (63%). Moderate broadcasts. Fastest assignment.</td><td>6.46 / 7.2 hrs</td></tr>
+            <tr><td><strong>mini-3w</strong></td><td>Similar to 3-wheeler. Good 15-min pickup rate (72.74%).</td><td>5.92 / 7.56 hrs</td></tr>
+            <tr><td><strong>tata-ace</strong></td><td>Worst fulfillment (48%). Longest pickup distances. Fewer drivers = more stretched.</td><td>6.43 / 6.54 hrs</td></tr>
+            <tr><td><strong>8ft-pickup</strong></td><td>Severely underserved. BLR: 344 drivers, 28.86% fulfillment.</td><td>6.81 / 6.23 hrs</td></tr>
+        </table>
+    </div>
+
+    <div class="highlight-box">
+        <p><strong>Research implication:</strong> When recruiting participants for ride-alongs, ensure coverage across Star/Non-Star, Flexi/Slot, and vehicle types. These segments likely have very different mental models, motivations, and pain points.</p>
+    </div>
 </section>
 
 <!-- PHASE 0 -->
