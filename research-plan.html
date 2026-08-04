@@ -58,6 +58,37 @@
         .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
         @media (max-width: 640px) { .grid-2 { grid-template-columns: 1fr; } header h1 { font-size: 1.5rem; } }
         .method-badge { display: inline-block; padding: 2px 8px; background: var(--dark); color: var(--white); border-radius: 4px; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
+        details { margin: 16px 0; }
+        details summary {
+            cursor: pointer;
+            padding: 14px 20px;
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--dark);
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s;
+        }
+        details summary:hover { border-color: var(--primary); color: var(--primary); }
+        details summary::before { content: "▸"; font-size: 0.8rem; transition: transform 0.2s; }
+        details[open] summary::before { transform: rotate(90deg); }
+        details[open] summary { border-radius: 10px 10px 0 0; border-bottom: none; }
+        details .accordion-content {
+            padding: 20px;
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-top: none;
+            border-radius: 0 0 10px 10px;
+        }
+        details .accordion-content h4 { color: var(--medium); margin: 16px 0 8px; font-size: 0.9rem; }
+        details .accordion-content h4:first-child { margin-top: 0; }
+        details .accordion-content ol { padding-left: 20px; }
+        details .accordion-content li { font-size: 0.9rem; margin-bottom: 6px; }
     </style>
 </head>
 <body>
@@ -289,6 +320,118 @@
             <li>Overall UX patterns and design language</li>
         </ul>
     </div>
+
+    <details>
+        <summary>PM Interview Questions (26 questions)</summary>
+        <div class="accordion-content">
+            <h4>On the Fulfillment Problem (54.5% vs 70% target)</h4>
+            <ol>
+                <li>What's your current hypothesis for why fulfillment is so low? What have you already tried?</li>
+                <li>Which part of the problem do you think is solvable by the app vs. needs ops/pricing changes?</li>
+                <li>Is there an internal breakdown of that 54.5%? How much is "no driver found" vs "driver cancelled" vs "customer cancelled"?</li>
+                <li>The data shows more drivers (8K→29K) didn't improve fulfillment. Were you aware? What's the theory?</li>
+                <li>What's the current broadcast logic? How does the system decide which driver to ping first?</li>
+                <li>Is there a plan to change the broadcast algorithm? What variables does it consider?</li>
+            </ol>
+            <h4>On Post-Assignment Cancellations (21% of orders)</h4>
+            <ol start="7">
+                <li>Are you aware that 21% of orders die after a driver accepts? Is this tracked at leadership level?</li>
+                <li>"Driver asked me to cancel" is 19% of cancellations. Is the cancellation penalty system under review?</li>
+                <li>What happens to a driver's account when they cancel? What's the penalty? How harsh is it?</li>
+                <li>23% of cancellations are "distance surprise" — does the broadcast show straight-line or actual route distance?</li>
+                <li>20% are vehicle mismatch — is the consumer selecting vehicle type? Is the system auto-assigning?</li>
+            </ol>
+            <h4>On Star/Non-Star System</h4>
+            <ol start="12">
+                <li>What exactly are the criteria for Star status? Can you share the formula?</li>
+                <li>Do drivers know they're Star/Non-Star? Is it communicated in the app?</li>
+                <li>Do Star drivers get priority on broadcasts or better orders?</li>
+                <li>What's the Star → Non-Star churn rate? How quickly do Stars fall?</li>
+            </ol>
+            <h4>On Slots/MBG (Declining)</h4>
+            <ol start="16">
+                <li>Slot contribution is dropping (9.5% → 7.5%). Are you worried about this?</li>
+                <li>What's the guaranteed amount per day for MBG drivers? Is it competitive vs. Porter earnings?</li>
+                <li>Are Slot drivers better because they're committed, or because the best drivers opt into Slots?</li>
+                <li>Any plans to change the Slot structure (shorter hours, partial exclusivity)?</li>
+            </ol>
+            <h4>On Competition & Multi-App Behavior</h4>
+            <ol start="20">
+                <li>How much of our driver base do you estimate is also on Porter/Rapido?</li>
+                <li>Do you have any data on what Porter/Rapido pays per order vs. Delhivery?</li>
+                <li>Is there anything in the pipeline to make Delhivery the "primary" app for drivers?</li>
+            </ol>
+            <h4>On the Revamp Scope</h4>
+            <ol start="23">
+                <li>What does success look like for this revamp? Is it a specific fulfillment number?</li>
+                <li>Are there any features/changes already decided that I should factor into my research?</li>
+                <li>What's off the table? (Things you've explored and rejected)</li>
+                <li>From your perspective, what are the top 3 problems the app redesign should solve?</li>
+            </ol>
+        </div>
+    </details>
+
+    <details>
+        <summary>Ops Team Interview Questions (30 questions)</summary>
+        <div class="accordion-content">
+            <h4>On Driver Behavior (Ground Reality)</h4>
+            <ol>
+                <li>What are the top 5 complaints you hear from drivers every day?</li>
+                <li>When drivers call support, what are the most common reasons?</li>
+                <li>Do drivers complain about the broadcast/order notification? (not seeing it, not enough info, etc.)</li>
+                <li>What do drivers say when asked why they cancelled an order?</li>
+                <li>Have you heard drivers say the pickup was farther than expected after accepting?</li>
+                <li>Do drivers openly talk about using Porter/Rapido simultaneously?</li>
+            </ol>
+            <h4>On the "Gaming" Problem (19% — "Driver asked me to cancel")</h4>
+            <ol start="7">
+                <li>Are you aware drivers ask customers to cancel instead of cancelling themselves? How widespread?</li>
+                <li>Why do they do it — is it the penalty? What's the exact penalty they face?</li>
+                <li>What does a driver's day look like when they get suspended for too many cancellations?</li>
+                <li>Have you seen drivers develop "tricks" to avoid the penalty system?</li>
+            </ol>
+            <h4>On Pickup Issues</h4>
+            <ol start="11">
+                <li>How often do drivers complain about waiting at pickup? What do they say?</li>
+                <li>Do merchants have the package ready when the driver arrives? What's the typical delay reason?</li>
+                <li>Data shows 50% of "driver issue" cancellations are verified refusals at pickup. What's happening there?</li>
+                <li>Are there specific merchants or locations that drivers hate going to? Why?</li>
+                <li>Do drivers complain about wrong addresses or unreachable pickup locations?</li>
+            </ol>
+            <h4>On the Night Problem (fulfillment 10-25% after 9 PM)</h4>
+            <ol start="16">
+                <li>Do you have drivers who work nights? What's different about them?</li>
+                <li>What's the demand like at night? What type of orders come in?</li>
+                <li>Have there been safety incidents at night that made drivers avoid it?</li>
+                <li>Is there any night-shift premium or incentive?</li>
+            </ol>
+            <h4>On Onboarding & Retention</h4>
+            <ol start="20">
+                <li>How do new drivers learn to use the app? Is there a training process?</li>
+                <li>How long does it take a new driver to become productive?</li>
+                <li>Why do drivers leave Delhivery? What are the top churn reasons?</li>
+                <li>What makes a driver come back after going inactive?</li>
+            </ol>
+            <h4>On City Differences</h4>
+            <ol start="24">
+                <li>Ahmedabad/Jaipur perform much better than Bangalore/Delhi/Mumbai. Why do you think that is?</li>
+                <li>Is Porter/Rapido less dominant in Ahmedabad/Jaipur?</li>
+                <li>Are there city-specific operational differences (incentive structures, ops team size)?</li>
+            </ol>
+            <h4>On Operations vs App Problems</h4>
+            <ol start="27">
+                <li>In your experience, which driver problems are caused by the app vs caused by operations/processes?</li>
+                <li>If you could fix ONE thing that isn't an app problem but kills fulfillment, what would it be?</li>
+                <li>What operational interventions have worked to improve driver performance?</li>
+                <li>Are there manual processes you do that should be automated in the app?</li>
+            </ol>
+        </div>
+    </details>
+
+    <div class="highlight-box">
+        <p><strong>Key framing (from PM):</strong> Don't look at this only through the design lens. Categorize findings into: <strong>App-solvable</strong> (broadcast info, navigation, feature discovery), <strong>Ops-solvable</strong> (package not ready, merchant education), <strong>Economics-solvable</strong> (fare structure, MBG guarantee, night premium), and <strong>System-solvable</strong> (broadcast algorithm, assignment radius, penalty logic).</p>
+    </div>
+
     <div class="highlight-box">
         <p><strong>Deliverable:</strong> A "What We Already Know" document — summarizing internal hypotheses, data insights, gaps, and specific questions to validate with drivers.</p>
     </div>
