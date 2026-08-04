@@ -112,27 +112,36 @@
             <h4>Product</h4>
             <p>Delhivery Local — Intracity delivery driver app</p>
             <p><strong>Live for:</strong> 2 years</p>
-            <p><strong>Cities:</strong> 6</p>
-            <p><strong>Drivers:</strong> ~7,000+</p>
+            <p><strong>Cities:</strong> 6 (Ahmedabad, Jaipur, Delhi NCR, Bangalore, Mumbai, Hyderabad)</p>
+            <p><strong>Total registered drivers:</strong> ~79,000+</p>
+            <p><strong>Daily active drivers:</strong> ~35,000–38,000</p>
+            <p><strong>Weekly active drivers:</strong> ~29,000 (grew from ~8K in April)</p>
+            <p><strong>Daily orders:</strong> ~18,000–20,000</p>
+            <p><strong>Daily broadcasts:</strong> ~450,000–510,000</p>
         </div>
         <div class="card">
-            <h4>Business Metrics to Improve</h4>
+            <h4>Business Metrics — Current vs Target</h4>
             <ul>
-                <li>Fulfillment rate → >70%</li>
-                <li>Less than 15 min pickup → >70%</li>
-                <li>Deliver on time</li>
-                <li>Decrease cancellation rate</li>
-                <li>Improve gross margin</li>
+                <li>Fulfillment rate: <strong>54.5%</strong> → target >70% <em>(gap: -15.5 pts)</em></li>
+                <li>Pickup under 15 min: <strong>~62%</strong> → target >70% <em>(gap: -8 pts)</em></li>
+                <li>P80 pickup time: <strong>21 min</strong> → target &lt;15 min</li>
+                <li>Acceptance rate: <strong>~5%</strong> → needs fundamental improvement</li>
+                <li>Post-assignment cancellation: <strong>20.9%</strong> → needs reduction</li>
+                <li>CM1 (contribution margin): <strong>-10.35%</strong> → target positive</li>
             </ul>
         </div>
         <div class="card">
             <h4>Driver Profile</h4>
             <ul>
                 <li>Gig workers (multi-app: Porter, Rapido, Uber)</li>
-                <li>Vehicle types: 2W, 3W, Tata Ace, 8ft pickup</li>
+                <li>Vehicle types: 2W, 3W, mini-3W, Tata Ace, 8ft pickup</li>
                 <li>Age: 25–50 years</li>
                 <li>Tech literacy: Low to medium</li>
                 <li>Devices: Mid-range Android phones</li>
+                <li>Avg login hours: 5.6–6.1 hrs/day</li>
+                <li>Avg deliveries/driver/day: 0.37</li>
+                <li>Avg earnings/driver/day: ₹123</li>
+                <li>80% of orders are COD (cash on delivery)</li>
             </ul>
         </div>
         <div class="card">
@@ -142,6 +151,7 @@
                 <li>Features added organically without cohesive IA</li>
                 <li>Migrating to new design system "TARMAC"</li>
                 <li>Want experience-level improvement, not just UI refresh</li>
+                <li><strong>Data-backed:</strong> 95% of broadcasts ignored, 21% post-assignment cancellations, 54.5% fulfillment (target >70%), negative margins in all cities</li>
             </ul>
         </div>
     </div>
@@ -317,6 +327,17 @@
             <li>"Why do you sometimes cancel an order after accepting?"</li>
             <li>"What do you like better about [Porter/Rapido]?"</li>
         </ul>
+        <h4 style="margin-top:16px">Data-driven questions (ranked by impact):</h4>
+        <ul>
+            <li>"Why do you ask the customer to cancel instead of cancelling yourself?" <em>(18.86% of cancellations)</em></li>
+            <li>"Has the pickup ever been farther than you expected after accepting?" <em>(12.61% — distance surprise)</em></li>
+            <li>"Do you ever accept orders while finishing another delivery on a different app?" <em>(5,794 moved-away cancellations)</em></li>
+            <li>"What makes you decide a package won't fit in your vehicle?" <em>(20% vehicle mismatch)</em></li>
+            <li>"What happens when you reach the pickup and the package isn't ready?" <em>(12 min avg wait, 50% verified refusal)</em></li>
+            <li>"What would the broadcast need to show you for you to accept/reject faster?" <em>(only 5% acceptance, 14 broadcasts per order in Bangalore)</em></li>
+            <li>"Do you know what your Star/Non-Star status is? Does it matter to you?"</li>
+            <li>"What time do you usually stop for the day? Why?" <em>(fulfillment collapses after 9 PM)</em></li>
+        </ul>
     </div>
     <div class="card">
         <span class="method-badge">Secondary Method</span>
@@ -354,14 +375,16 @@
     </div>
     <div class="card">
         <h4>Participant Recruitment Criteria</h4>
-        <p>Ensure diversity across these dimensions:</p>
+        <p>Ensure diversity across these dimensions (informed by data):</p>
         <table>
-            <tr><th>Dimension</th><th>Segments</th></tr>
-            <tr><td>Vehicle Type</td><td>2-Wheeler, 3-Wheeler, Tata Ace / 4-Wheeler</td></tr>
-            <tr><td>Tenure</td><td>&lt;3 months (new), 3–12 months (mid), &gt;12 months (veteran)</td></tr>
-            <tr><td>Activity Level</td><td>High performers vs. at-risk/low-activity drivers</td></tr>
-            <tr><td>Age</td><td>Younger (25–30) vs. Older (35–50)</td></tr>
-            <tr><td>Multi-app usage</td><td>Delhivery-only vs. multi-platform drivers</td></tr>
+            <tr><th>Dimension</th><th>Segments</th><th>Data Context</th></tr>
+            <tr><td>Vehicle Type</td><td>2-Wheeler, 3-Wheeler, mini-3W, Tata Ace, 8ft pickup</td><td>2W = largest but lowest accept rate (4-6%); 3W = best fulfillment (63%); Tata-ace = worst (48%)</td></tr>
+            <tr><td>Partner Tier</td><td>Star vs Non-Star</td><td>Stars accept 2-3x more, earn 2-3x more with only 1 hr more online</td></tr>
+            <tr><td>Payout Model</td><td>Flexi (default) vs Slot/MBG</td><td>Slot participation declining (9.5% → 7.5%) — understand why</td></tr>
+            <tr><td>Tenure</td><td>&lt;3 months (new), 3–12 months (mid), &gt;12 months (veteran)</td><td></td></tr>
+            <tr><td>Activity Level</td><td>Power users (8+ hrs) vs Barely active (&lt;1 hr) vs Core (5-8 hrs)</td><td>4-5K drivers log &lt;1 hr daily — why?</td></tr>
+            <tr><td>Acceptance behavior</td><td>High acceptors vs 0% acceptance (logged in but never accepting)</td><td>Many drivers receive 300-500 broadcasts/week, accept none</td></tr>
+            <tr><td>Multi-app usage</td><td>Delhivery-primary vs. multi-platform (Porter/Rapido primary)</td><td>5,794 cancellations from drivers moving AWAY = doing other app's order</td></tr>
         </table>
         <p><strong>Total participants:</strong> 13–16 for qualitative (ride-along + usability) + 20–30 for survey</p>
     </div>
@@ -400,11 +423,12 @@
     <div class="card">
         <h4>3. Behavioral Personas</h4>
         <p>Create 2–3 driver personas based on behavior patterns (not just demographics).</p>
-        <p><strong>Potential persona axes:</strong></p>
+        <p><strong>Data-suggested persona axes:</strong></p>
         <ul>
-            <li>Maximizer vs. Steady earner</li>
-            <li>Tech-comfortable vs. Tech-minimal</li>
-            <li>Delhivery-primary vs. Multi-app juggler</li>
+            <li><strong>The Committed Star</strong> — Logs 6-7 hrs, accepts 9-15% of broadcasts, delivers 0.8-1.1 orders/day, earns ₹200-307/day. Delhivery is primary app.</li>
+            <li><strong>The Multi-App Juggler</strong> — Logs 5+ hrs but 0.24 deliveries/day on Delhivery. 0-1.2% acceptance rate. Receives 300+ broadcasts/week, takes almost none. Porter/Rapido is primary; Delhivery is backup.</li>
+            <li><strong>The Ghost Driver</strong> — Logs &lt;1 hr daily (4-5K drivers do this). Tests the app, finds nothing worth accepting, leaves. May be new, disengaged, or churning.</li>
+            <li><strong>The Slot Committer</strong> — Opted into MBG. Online 8 hrs exclusively. Takes what comes. Better at short distances. Declining segment — validate why.</li>
         </ul>
     </div>
     <div class="card">
@@ -531,14 +555,16 @@
         </ul>
     </div>
     <div class="card">
-        <h4>Things to Watch For</h4>
+        <h4>Things to Watch For (Data-Backed)</h4>
         <ul>
-            <li><strong>COD friction:</strong> 80% of orders are COD — observe cash handling</li>
-            <li><strong>Broadcast anxiety:</strong> Orders expire fast — watch for stress</li>
-            <li><strong>Multi-app switching:</strong> Observe the switching pattern</li>
-            <li><strong>Homepage confusion:</strong> 5 CTAs — watch for navigation failures</li>
-            <li><strong>Slot booking:</strong> Plan ahead or last-minute?</li>
-            <li><strong>Incentive understanding:</strong> Do they know what targets to hit?</li>
+            <li><strong>COD friction:</strong> 80% of orders are COD — observe cash handling pain points</li>
+            <li><strong>Broadcast decision-making:</strong> 95% of broadcasts are ignored. System pings 9-14 drivers before one accepts. Watch: do they see the notification? What info makes them decide? How fast can they process it?</li>
+            <li><strong>Multi-app switching:</strong> 5,794 cancellations from drivers moving AWAY from pickup (doing another app's order). Watch: how many apps are open? Which is "primary"?</li>
+            <li><strong>Distance surprise:</strong> 23% of cancellations are because actual route is longer than expected. Watch: what does the broadcast show vs. what navigation reveals after accepting</li>
+            <li><strong>Pickup waiting:</strong> 12 min average wait at pickup (unpaid). 50% of "driver issue" = verified refusal at pickup. Watch: what happens when they arrive and package isn't ready</li>
+            <li><strong>Night behavior:</strong> Fulfillment collapses to 10-25% after 9 PM. Do they stop because of safety? Fatigue? No demand on other apps either?</li>
+            <li><strong>Slot/MBG perception:</strong> Declining (9.5% → 7.5%). 8-hr exclusivity + no-cancel rules — do they find this too restrictive?</li>
+            <li><strong>Star awareness:</strong> Do drivers know their tier? Does it motivate them? Do they know what improves it?</li>
         </ul>
     </div>
 </section>
