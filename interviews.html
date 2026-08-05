@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interviews — Delhivery Local Driver App</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --primary: #E63946;
+            --primary-light: #FFF0F1;
+            --dark: #1D3557;
+            --medium: #457B9D;
+            --light: #A8DADC;
+            --bg: #F8F9FA;
+            --white: #FFFFFF;
+            --gray: #6C757D;
+            --border: #DEE2E6;
+            --green: #059669;
+            --green-light: #ECFDF5;
+            --amber: #D97706;
+            --amber-light: #FFFBEB;
+        }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg); color: var(--dark); line-height: 1.6; }
+        .container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+        header { background: var(--dark); color: var(--white); padding: 48px 0 36px; text-align: center; }
+        header h1 { font-size: 2rem; margin-bottom: 8px; }
+        header p { color: var(--light); font-size: 1.1rem; }
+        header a { color: var(--light); text-decoration: none; font-size: 0.85rem; opacity: 0.8; }
+        header a:hover { opacity: 1; }
+        main { padding: 48px 0 80px; }
+        .interview-header { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 24px 28px; margin-bottom: 32px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+        .interview-header h2 { font-size: 1.4rem; color: var(--dark); }
+        .interview-meta { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+        .meta-tag { display: inline-block; padding: 4px 12px; border-radius: 6px; font-size: 0.8rem; font-weight: 600; }
+        .meta-tag.role { background: #DBEAFE; color: #1E40AF; }
+        .meta-tag.date { background: #F3F4F6; color: #374151; }
+        section { margin-bottom: 40px; }
+        section h3 { font-size: 1.2rem; color: var(--dark); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--medium); display: inline-block; }
+        .card { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 24px; margin: 16px 0; }
+        .card h4 { font-size: 1rem; color: var(--primary); margin-bottom: 12px; }
+        p, li { font-size: 0.95rem; color: #333; margin-bottom: 8px; }
+        ul, ol { padding-left: 20px; margin-bottom: 16px; }
+        .highlight-box { background: var(--primary-light); border-left: 4px solid var(--primary); padding: 16px 20px; border-radius: 0 8px 8px 0; margin: 16px 0; }
+        .insight-box { background: var(--green-light); border-left: 4px solid var(--green); padding: 16px 20px; border-radius: 0 8px 8px 0; margin: 16px 0; }
+        .insight-box strong { color: var(--green); }
+        .opportunity-box { background: var(--amber-light); border-left: 4px solid var(--amber); padding: 16px 20px; border-radius: 0 8px 8px 0; margin: 16px 0; }
+        .opportunity-box strong { color: var(--amber); }
+        .flow-diagram { background: var(--dark); color: var(--white); padding: 24px; border-radius: 12px; margin: 16px 0; font-family: monospace; font-size: 0.85rem; line-height: 2; white-space: pre-wrap; }
+        .flow-diagram .label { color: var(--light); }
+        .flow-diagram .success { color: #4ADE80; }
+        .flow-diagram .fail { color: #FB7185; }
+        table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 0.9rem; }
+        th, td { padding: 12px 16px; text-align: left; border-bottom: 1px solid var(--border); }
+        th { background: var(--dark); color: var(--white); font-weight: 600; }
+        tr:nth-child(even) { background: #F8F9FA; }
+        @media (max-width: 640px) { 
+            .interview-header { flex-direction: column; align-items: flex-start; }
+            header h1 { font-size: 1.5rem; } 
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="container">
+        <a href="index.html">← Back to Home</a>
+        <h1>Interviews</h1>
+        <p>Stakeholder & Driver Conversations</p>
+    </div>
+</header>
+
+<main>
+<div class="container">
+
+<!-- INTERVIEW 1 -->
+<div class="interview-header">
+    <h2>Interview #1: Thanuj Kumar</h2>
+    <div class="interview-meta">
+        <span class="meta-tag role">Ops Team</span>
+        <span class="meta-tag date">Aug 5, 2026</span>
+    </div>
+</div>
+
+<!-- ONBOARDING & TRAINING -->
+<section>
+    <h3>1. Onboarding & Training</h3>
+
+    <div class="card">
+        <h4>Training Videos Exist — But Are Hidden</h4>
+        <ul>
+            <li>Training videos already exist but are stored in Google Drive</li>
+            <li>When a driver faces a problem and contacts ops, the team manually shares the relevant video link</li>
+            <li>Drivers can't discover or access these on their own</li>
+        </ul>
+        <div class="opportunity-box">
+            <strong>Opportunity:</strong> Surface training videos inside the app — contextual help at the point of confusion instead of relying on ops to manually share links.
+        </div>
+    </div>
+
+    <div class="card">
+        <h4>Proposed Idea from Ops: Training as Enforcement</h4>
+        <p>If a driver cancels too much → block them → require them to watch a training video + pass a quiz → then unblock.</p>
+        <p><em>(Not current system — a suggestion from ops as a use case for making training content actionable.)</em></p>
+    </div>
+
+    <div class="card">
+        <h4>New Drivers Need In-App Guidance</h4>
+        <ul>
+            <li>New users who are unfamiliar with the system need coachmarks or a starter helper</li>
+            <li>Goal: help them understand the app independently — without needing ops or support</li>
+            <li>Currently no in-app onboarding exists in the driver app (onboarding happens in a separate app)</li>
+        </ul>
+        <div class="insight-box">
+            <strong>Insight:</strong> Drivers download the app and are expected to figure it out on their own. Any confusion = call to support.
+        </div>
+    </div>
+
+    <div class="card">
+        <h4>"In Progress" State is Useless</h4>
+        <ul>
+            <li>If onboarding is incomplete, the UI shows "in progress" — but doesn't say <em>what</em> is pending</li>
+            <li>Internally, the team knows the blocker (e.g., PAN still under verification) but this isn't shown to the driver</li>
+            <li>Result: drivers don't know what's wrong → they call support → it's treated as low priority by the Goa CX team</li>
+        </ul>
+        <div class="opportunity-box">
+            <strong>Opportunity:</strong> Show explicit status messages (e.g., "Your PAN is under review — expected 2–3 days") so drivers know the actual blocker without calling support.
+        </div>
+    </div>
+</section>
+
+<!-- APP USABILITY -->
+<section>
+    <h3>2. App Usability Issues</h3>
+
+    <div class="card">
+        <h4>Swipe Action Fails / Buffering</h4>
+        <ul>
+            <li>The "swipe to mark arrived/delivered" action sometimes doesn't register — buffering or loading issue</li>
+            <li>This is a core action failure — drivers can't complete their primary task</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h4>Drivers Call Ops When They Can't:</h4>
+        <ul>
+            <li>Mark as arrived</li>
+            <li>Mark as delivered</li>
+            <li>Find the customer's contact number</li>
+        </ul>
+        <div class="highlight-box">
+            <strong>Note:</strong> These are basic, high-frequency actions. If drivers need to call ops for these, the app is failing at its primary job.
+        </div>
+    </div>
+</section>
+
+<!-- SLOTS FEATURE -->
+<section>
+    <h3>3. Slots Feature</h3>
+
+    <div class="card">
+        <h4>Slots Work Well for 2-Wheelers</h4>
+        <ul>
+            <li>2W drivers engage with slots and show up reliably</li>
+            <li><strong>70%+ of drivers who book slots actually show up</strong></li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h4>Tata Ace Drivers Avoid Slots</h4>
+        <ul>
+            <li>Auto-assign feature sends them to locations they don't want to go</li>
+            <li>They lose control over route selection when in a slot</li>
+            <li>This defeats the purpose — they'd rather stay Flexi and choose orders</li>
+        </ul>
+        <div class="insight-box">
+            <strong>Insight:</strong> Slots require giving up control. For Tata Ace drivers (longer routes, more effort per trip), the tradeoff doesn't work because auto-assign ignores their preferences.
+        </div>
+    </div>
+
+    <div class="card">
+        <h4>Access is Restricted</h4>
+        <ul>
+            <li>Only Star drivers can access Slots (Non-Star cannot)</li>
+            <li>Two models exist: <strong>Flexi</strong> (default, per-order) vs <strong>Slots</strong> (opt-in, guaranteed earning)</li>
+        </ul>
+    </div>
+</section>
+
+<!-- SURGE & DEMAND -->
+<section>
+    <h3>4. Surge & Demand Visibility</h3>
+
+    <div class="card">
+        <h4>Drivers Want a Demand Heatmap</h4>
+        <ul>
+            <li>Drivers want to know where high-demand/surge areas are — like Rapido shows on their map</li>
+            <li>Currently: ops team sends push notifications to drivers who are in surge-applied areas</li>
+            <li>Gap: no in-app visibility of demand zones — drivers can't proactively position themselves</li>
+        </ul>
+        <div class="opportunity-box">
+            <strong>Opportunity:</strong> Show surge/demand zones on the map in-app. Let drivers make informed decisions about where to go, instead of passively waiting for a push notification.
+        </div>
+    </div>
+</section>
+
+<!-- SUPPORT FLOW -->
+<section>
+    <h3>5. Driver Support Flow</h3>
+
+    <div class="card">
+        <h4>Two Paths to Resolution</h4>
+        <p>How a driver gets help depends on whether they personally know someone on the ops team:</p>
+
+        <div class="flow-diagram"><span class="label">DRIVER FACES AN ISSUE</span>
+│
+├── <span class="label">Path 1: Doesn't know ops number (default)</span>
+│   │
+│   └── Calls support helpline
+│       │
+│       └── CX Team (Goa) picks up
+│           │
+│           ├── <span class="success">Solved ✓</span>
+│           │
+│           └── Unsolved → Escalates to OPS Team (Bangalore)
+│               │
+│               └── Ops checks CRN (order ID)
+│                   │
+│                   └── Raises ticket in OS1
+│                       │
+│                       ├── <span class="success">Solved ✓</span>
+│                       │
+│                       └── <span class="fail">Needs escalation</span>
+│                           │
+│                           └── Shares in Google Chat with relevant team
+│
+│
+└── <span class="label">Path 2: Knows ops member's number (informal)</span>
+    │
+    └── Calls ops directly (skips CX)
+        │
+        └── Ops checks CRN (order ID)
+            │
+            └── Raises ticket in OS1
+                │
+                ├── <span class="success">Solved ✓</span>
+                │
+                └── <span class="fail">Needs escalation</span>
+                    │
+                    └── Shares in Google Chat with relevant team</div>
+    </div>
+
+    <div class="card">
+        <h4>Key Observation</h4>
+        <div class="highlight-box">
+            <strong>Inequity in support access:</strong> Drivers with personal ops connections get faster resolution by skipping the CX queue entirely. Drivers without connections go through Goa CX first (where driver issues are treated as low priority), adding delay and frustration.
+        </div>
+    </div>
+</section>
+
+<!-- DESIGN IMPLICATIONS -->
+<section>
+    <h3>6. Design Implications</h3>
+
+    <div class="card">
+        <h4>What This Means for the Revamp</h4>
+        <table>
+            <tr><th>Insight</th><th>Design Opportunity</th></tr>
+            <tr><td>Drivers can't find customer contact number</td><td>Critical info is buried — surface it prominently during active delivery</td></tr>
+            <tr><td>Swipe/buffering issues on core actions</td><td>Reliability of primary actions = trust. Fix or provide fallback</td></tr>
+            <tr><td>New drivers have no guidance</td><td>In-app coachmarks or starter guide needed</td></tr>
+            <tr><td>"In progress" doesn't show actual blocker</td><td>Specific, actionable status messages (e.g., "PAN under review")</td></tr>
+            <tr><td>Training videos hidden in Google Drive</td><td>Contextual help/videos inside the app</td></tr>
+            <tr><td>Tata Ace avoids slots (auto-assign forces bad routes)</td><td>Route preference or opt-out for auto-assigned orders</td></tr>
+            <tr><td>Drivers want demand heatmap</td><td>Show surge zones on map (like Rapido does)</td></tr>
+            <tr><td>Support access depends on knowing someone</td><td>In-app support that's fast — reduce need to call at all</td></tr>
+        </table>
+    </div>
+</section>
+
+</div>
+</main>
+</body>
+</html>

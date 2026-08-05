@@ -45,9 +45,9 @@
         }
         .cards {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr 1fr 1fr;
             gap: 24px;
-            max-width: 700px;
+            max-width: 900px;
             width: 100%;
         }
         .card {
@@ -75,6 +75,7 @@
         }
         .card-plan::before { background: var(--medium); }
         .card-data::before { background: var(--primary); }
+        .card-interviews::before { background: #059669; }
         .card h2 {
             font-size: 1.3rem;
             color: var(--dark);
@@ -99,6 +100,7 @@
         }
         .badge-blue { background: #DBEAFE; color: #1E40AF; }
         .badge-red { background: var(--primary-light); color: var(--primary); }
+        .badge-green { background: #ECFDF5; color: #059669; }
         footer {
             margin-top: 48px;
             font-size: 0.8rem;
@@ -128,6 +130,12 @@
         <span class="badge badge-red">Analytics</span>
         <h2>Findings from Data</h2>
         <p>41 insights across 6 categories — business metrics, network health, cancellations, partner performance.</p>
+        <span class="arrow">→</span>
+    </a>
+    <a href="interviews.html" class="card card-interviews">
+        <span class="badge badge-green">Qualitative</span>
+        <h2>Interviews</h2>
+        <p>Stakeholder & driver conversations — ops insights, support flows, pain points from the ground.</p>
         <span class="arrow">→</span>
     </a>
 </div>
