@@ -47,6 +47,34 @@
         .funnel-box { background: var(--dark); color: var(--white); padding: 24px; border-radius: 12px; margin: 16px 0; font-family: monospace; font-size: 0.85rem; line-height: 1.8; }
         .funnel-box .success { color: #4ADE80; }
         .funnel-box .fail { color: #FB7185; }
+
+        /* Business Metrics Summary Panel */
+        .page-layout { display: flex; gap: 24px; }
+        .page-layout .container { flex: 1; min-width: 0; }
+        .metrics-panel { width: 320px; flex-shrink: 0; align-self: flex-start; padding: 16px 0; }
+        .metrics-panel-inner { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+        .metrics-panel h3 { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.8px; color: var(--gray); margin-bottom: 16px; font-weight: 700; }
+        .metrics-panel .north-star { background: var(--dark); color: var(--white); padding: 12px 14px; border-radius: 8px; margin-bottom: 16px; }
+        .metrics-panel .north-star .label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.5px; color: var(--light); margin-bottom: 4px; }
+        .metrics-panel .north-star .value { font-size: 1.1rem; font-weight: 700; }
+        .metric-item { padding: 10px 0; border-bottom: 1px solid var(--border); }
+        .metric-item:last-child { border-bottom: none; }
+        .metric-item .metric-label { font-size: 0.78rem; color: var(--gray); margin-bottom: 4px; font-weight: 500; }
+        .metric-item .metric-value { font-size: 0.95rem; font-weight: 700; display: flex; align-items: center; gap: 8px; }
+        .metric-item .metric-target { font-size: 0.72rem; color: var(--gray); margin-top: 2px; }
+        .status-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+        .status-red { background: #E63946; }
+        .status-amber { background: #F4A261; }
+        .status-green { background: #2A9D8F; }
+        .metric-trend { font-size: 0.72rem; padding: 2px 6px; border-radius: 4px; font-weight: 600; }
+        .trend-down { background: #FEE2E2; color: #DC2626; }
+        .trend-up { background: #D1FAE5; color: #059669; }
+        .trend-flat { background: #F3F4F6; color: #6B7280; }
+        .panel-divider { height: 1px; background: var(--border); margin: 12px 0; }
+        .panel-note { font-size: 0.7rem; color: var(--gray); line-height: 1.4; margin-top: 12px; font-style: italic; }
+        .metric-link { font-size: 0.7rem; color: var(--medium); text-decoration: none; display: inline-flex; align-items: center; gap: 3px; margin-top: 4px; opacity: 0.8; transition: opacity 0.2s; }
+        .metric-link:hover { opacity: 1; color: var(--primary); }
+        @media (max-width: 1200px) { .metrics-panel { display: none; } .page-layout { display: block; } }
     </style>
 </head>
 <body>
@@ -71,13 +99,14 @@
 </nav>
 
 <main>
-<div class="container">
+<div class="page-layout" style="max-width: 1280px; margin: 0 auto; padding: 0 24px;">
+<div class="container" style="max-width: 900px; padding: 0;">
 
 <!-- CATEGORY A: KEY BUSINESS METRICS -->
 <section id="cat-a">
     <h2>Category A: Key Business Metrics</h2>
 
-    <div class="card">
+    <div class="card" id="finding-fulfillment">
         <h4>1. Fulfillment Rate is a Major Problem</h4>
         <ul>
             <li><strong>Overall fulfillment: ~54.5%</strong> — target is >70%. Massive gap.</li>
@@ -129,7 +158,7 @@
         </div>
     </div>
 
-    <div class="card">
+    <div class="card" id="finding-orders-per-rider">
         <h4>5. Star vs Non-Star Flexi Drivers</h4>
         <ul>
             <li>Non-star Flexi riders: ~70-74% of fulfilled orders</li>
@@ -153,7 +182,7 @@
         </div>
     </div>
 
-    <div class="card">
+    <div class="card" id="finding-cm1">
         <h4>7. CM1 (Contribution Margin) is Negative Everywhere</h4>
         <table>
             <tr><th>City</th><th>CM1</th></tr>
@@ -166,7 +195,7 @@
         <p>Losing money on every order. App needs to make drivers more efficient.</p>
     </div>
 
-    <div class="card">
+    <div class="card" id="finding-order-volume">
         <h4>8. Order Volume Dipped in Early August</h4>
         <ul>
             <li>Aug 2 week shows a sharp drop — could be partial week data</li>
@@ -179,7 +208,7 @@
 <section id="cat-b">
     <h2>Category B: Network Health & Service Quality</h2>
 
-    <div class="card">
+    <div class="card" id="finding-assignment-speed">
         <h4>9. Assignment Time = Fulfillment (Speed Matters Most)</h4>
         <table>
             <tr><th>Assignment Time</th><th>Fulfillment Rate</th></tr>
@@ -361,7 +390,7 @@
 <section id="cat-d">
     <h2>Category D: Fulfillment Deep Dive</h2>
 
-    <div class="card">
+    <div class="card" id="finding-cancellations">
         <h4>19. Where Orders Die — Cancellation Breakdown</h4>
         <p>Out of 647,900 total orders (Jun 28 – Aug 2):</p>
         <table>
@@ -574,7 +603,7 @@
 <section id="cat-f">
     <h2>Category F: Partner Performance</h2>
 
-    <div class="card">
+    <div class="card" id="finding-online-hours">
         <h4>34. Star vs Non-Star Daily Comparison</h4>
         <table>
             <tr><th>Date</th><th>Tier</th><th>Drivers</th><th>Login Hrs</th><th>Accept Rate</th><th>Del/Driver</th><th>₹/Driver</th></tr>
@@ -591,7 +620,7 @@
         </ul>
     </div>
 
-    <div class="card">
+    <div class="card" id="finding-acceptance-rate">
         <h4>35. Overall Acceptance Rate: ~5%</h4>
         <table>
             <tr><th>Date</th><th>Drivers</th><th>Login Hrs</th><th>Broadcasts</th><th>Accept Rate</th></tr>
@@ -714,7 +743,123 @@
     </div>
 </section>
 
-</div>
+</div><!-- end container -->
+
+<!-- BUSINESS METRICS SUMMARY PANEL -->
+<aside class="metrics-panel">
+    <div class="metrics-panel-inner">
+        <h3>Business Health</h3>
+        
+        <!-- North Star -->
+        <div class="north-star">
+            <div class="label">North Star: No. of Orders</div>
+            <div class="value">~18K/day <span class="metric-trend trend-down">↓ dipping</span></div>
+            <a href="#finding-order-volume" class="metric-link" style="color: var(--light);">→ See finding #8</a>
+        </div>
+
+        <!-- Fulfillment Rate -->
+        <div class="metric-item">
+            <div class="metric-label">Fulfillment Rate</div>
+            <div class="metric-value">
+                <span class="status-dot status-red"></span>
+                54.5%
+            </div>
+            <div class="metric-target">Target: >70% • Gap: -15.5pp</div>
+            <a href="#finding-fulfillment" class="metric-link">→ See finding #1</a>
+        </div>
+
+        <!-- Orders per Rider -->
+        <div class="metric-item">
+            <div class="metric-label">Orders / Rider / Day</div>
+            <div class="metric-value">
+                <span class="status-dot status-red"></span>
+                0.3–0.4 (Non-Star)
+            </div>
+            <div class="metric-target">Star riders: 0.8–1.1 / day</div>
+            <a href="#finding-orders-per-rider" class="metric-link">→ See finding #5</a>
+        </div>
+
+        <!-- Online Hours -->
+        <div class="metric-item">
+            <div class="metric-label">Online Hours / Driver</div>
+            <div class="metric-value">
+                <span class="status-dot status-amber"></span>
+                5.6 hrs avg
+            </div>
+            <div class="metric-target">Star: 6.4 hrs • 4-5K log <1hr</div>
+            <a href="#finding-online-hours" class="metric-link">→ See finding #34</a>
+        </div>
+
+        <!-- Earnings -->
+        <div class="metric-item">
+            <div class="metric-label">Earnings / Driver / Day</div>
+            <div class="metric-value">
+                <span class="status-dot status-red"></span>
+                ₹102 (Non-Star)
+            </div>
+            <div class="metric-target">Star: ₹265–307 / day</div>
+            <a href="#finding-online-hours" class="metric-link">→ See finding #34</a>
+        </div>
+
+        <!-- Cancellation/Rejection -->
+        <div class="metric-item">
+            <div class="metric-label">Cancellation + Rejection</div>
+            <div class="metric-value">
+                <span class="status-dot status-red"></span>
+                ~41% of orders
+            </div>
+            <div class="metric-target">Post-assign: 21% • Pre-assign: 11.5% • No driver: 8.4%</div>
+            <a href="#finding-cancellations" class="metric-link">→ See finding #19</a>
+        </div>
+
+        <div class="panel-divider"></div>
+
+        <!-- Secondary indicators -->
+        <h3 style="margin-top: 4px;">Key Signals</h3>
+
+        <div class="metric-item">
+            <div class="metric-label">Broadcast Accept Rate</div>
+            <div class="metric-value">
+                <span class="status-dot status-red"></span>
+                ~5%
+            </div>
+            <div class="metric-target">95% of broadcasts ignored</div>
+            <a href="#finding-acceptance-rate" class="metric-link">→ See finding #35</a>
+        </div>
+
+        <div class="metric-item">
+            <div class="metric-label">Assignment Speed (P80)</div>
+            <div class="metric-value">
+                <span class="status-dot status-amber"></span>
+                ~2–4 min
+            </div>
+            <div class="metric-target"><30s = 77% fulfillment</div>
+            <a href="#finding-assignment-speed" class="metric-link">→ See finding #9</a>
+        </div>
+
+        <div class="metric-item">
+            <div class="metric-label">CM1 (Contribution Margin)</div>
+            <div class="metric-value">
+                <span class="status-dot status-red"></span>
+                -10.35%
+            </div>
+            <div class="metric-target">Negative across all cities</div>
+            <a href="#finding-cm1" class="metric-link">→ See finding #7</a>
+        </div>
+
+        <div class="panel-divider"></div>
+
+        <div class="panel-note">
+            <strong>Legend:</strong><br>
+            <span style="color: #E63946;">●</span> Critical — far from target<br>
+            <span style="color: #F4A261;">●</span> Needs attention<br>
+            <span style="color: #2A9D8F;">●</span> On track<br><br>
+            Data: Jun 28 – Aug 3, 2026
+        </div>
+    </div>
+</aside>
+
+</div><!-- end page-layout -->
 </main>
 
 <footer style="background: var(--dark); color: var(--light); padding: 24px 0; text-align: center; font-size: 0.85rem;">
