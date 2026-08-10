@@ -91,7 +91,7 @@
 <div class="container">
 
 <!-- ==================== INTERVIEW #1 ==================== -->
-<details class="interview-accordion" open>
+<details class="interview-accordion">
     <summary>
         <span class="chevron">▶</span>
         <div class="info">
@@ -211,6 +211,488 @@
             └── <span class="fail">Escalate → Google Chat with relevant team</span></div>
             <p class="flow-note"><strong>Inequity:</strong> Drivers with ops connections skip the queue and get faster resolution. Others go through Goa CX (low priority) — adding delay and frustration.</p>
         </div>
+
+    </div>
+</details>
+
+<!-- ==================== INTERVIEW #2 ==================== -->
+<details class="interview-accordion">
+    <summary>
+        <span class="chevron">▶</span>
+        <div class="info">
+            <h3>M Gowda Gowda</h3>
+            <p>Swipe issues, route mismatch, cancellation attribution, demand visibility, vehicle mismatch</p>
+        </div>
+        <div class="tags">
+            <span class="meta-tag role">Driver (2W)</span>
+            <span class="meta-tag date">Aug 2026</span>
+        </div>
+    </summary>
+    <div class="interview-content">
+
+        <!-- Driver Profile + Analytics (compact) -->
+        <p class="section-label">Driver Profile & Analytics</p>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 12px;">
+            <div style="background: var(--bg); border-radius: 8px; padding: 14px 16px; font-size: 0.84rem; line-height: 1.8;">
+                <strong style="color: var(--dark);">Vehicle:</strong> 2W — Bike (KA02LJ3800)<br>
+                <strong style="color: var(--dark);">Tier:</strong> Star<br>
+                <strong style="color: var(--dark);">Tenure:</strong> 1 yr (joined Dec '25)<br>
+                <strong style="color: var(--dark);">Area:</strong> Vijayanagar (lives Chandra Layout)<br>
+                <strong style="color: var(--dark);">Hours:</strong> 9+ hrs/day (full slots)<br>
+                <strong style="color: var(--dark);">Goal:</strong> ₹1,200/day excl. expenses<br>
+                <strong style="color: var(--dark);">Other apps:</strong> Porter, Rapido Parcel<br>
+                <strong style="color: var(--dark);">Previous:</strong> Swiggy (left for daily wages)<br>
+                <strong style="color: var(--dark);">Status:</strong> Active (no order in 7 days)
+            </div>
+            <div style="background: var(--bg); border-radius: 8px; padding: 14px 16px; font-size: 0.84rem; line-height: 1.8;">
+                <strong style="color: var(--dark);">Lifetime deliveries:</strong> 698 &nbsp;|&nbsp; <strong>L30D:</strong> 301<br>
+                <strong style="color: var(--dark);">Rating:</strong> 4.3 lifetime / 4.73 L30D<br>
+                <strong style="color: var(--dark);">Completion:</strong> 67.89% &nbsp;|&nbsp; <strong>Cancel:</strong> 4.67%<br>
+                <strong style="color: var(--dark);">L30D Earnings:</strong> ₹10,828 (₹601 today)<br>
+                <strong style="color: var(--dark);">On-time pickup:</strong> 99.01%<br>
+                <strong style="color: var(--dark);">On-time drop:</strong> 100%<br>
+                <strong style="color: var(--dark);">On-time overall:</strong> 99.5%<br>
+                <strong style="color: var(--dark);">Bad ratings:</strong> 0<br>
+                <strong style="color: var(--dark);">Slots:</strong> 28 booked / 12 completed
+            </div>
+        </div>
+
+        <!-- Broadcast & Order Acceptance -->
+        <p class="section-label">Broadcast & Order Acceptance</p>
+        <table class="findings-table">
+            <tr>
+                <th>Finding</th>
+                <th>Insight</th>
+                <th>Opportunity</th>
+            </tr>
+            <tr>
+                <td>Looks at pickup distance, drop distance, route familiarity, and amount before deciding to accept.</td>
+                <td class="col-insight">Drivers need confident route knowledge + fair pay to accept. Unfamiliar areas = automatic rejection.</td>
+                <td class="col-opportunity">Show landmarks or familiar reference points in broadcast info to aid snap decisions.</td>
+            </tr>
+            <tr>
+                <td>If idle for 1–2 hrs with no orders, moves to a nearby area with higher demand — based on work experience.</td>
+                <td class="col-insight">Veteran drivers build mental demand maps. No in-app help for newer drivers to do the same.</td>
+                <td class="col-opportunity">Show demand/order density on map (surge zones) so all drivers can reposition intelligently.</td>
+            </tr>
+            <tr>
+                <td>Has never taken a Trip Radar trip.</td>
+                <td class="col-insight">Trip Radar isn't discoverable or compelling enough for some segment of drivers.</td>
+                <td class="col-opportunity">Investigate Trip Radar awareness; improve value prop or discoverability.</td>
+            </tr>
+        </table>
+
+        <!-- App Reliability & Usability -->
+        <p class="section-label">App Reliability & Usability</p>
+        <table class="findings-table">
+            <tr>
+                <th>Finding</th>
+                <th>Insight</th>
+                <th>Opportunity</th>
+            </tr>
+            <tr>
+                <td>"Swipe to start trip" is a big issue — not responsive, frequently fails.</td>
+                <td class="col-insight">Core action failure. Confirmed across multiple interviews — this is systemic, not edge-case.</td>
+                <td class="col-opportunity">Fix swipe reliability. Provide fallback tap action for critical state transitions.</td>
+            </tr>
+            <tr>
+                <td>Unable to mark "arrived" once he reaches pickup. Even if marked, not displaying in the app. Calls ops to force-mark.</td>
+                <td class="col-insight">App state management failing on critical status transitions. Drivers rely on ops as workaround.</td>
+                <td class="col-opportunity">Investigate and fix arrived/delivered state sync bugs. Add retry mechanism.</td>
+            </tr>
+            <tr>
+                <td>Can't see why a cancelled order was cancelled — customer-initiated vs driver-attributed.</td>
+                <td class="col-insight">Unclear attribution affects MBG eligibility (>1 cancellation = no guaranteed pay). Feels unjust.</td>
+                <td class="col-opportunity">Show cancellation reason + attribution (customer vs driver vs system) in order history.</td>
+            </tr>
+
+        </table>
+
+        <!-- Route & Navigation -->
+        <p class="section-label">Route & Navigation</p>
+        <table class="findings-table">
+            <tr>
+                <th>Finding</th>
+                <th>Insight</th>
+                <th>Opportunity</th>
+            </tr>
+            <tr>
+                <td>Actual route/distance is frequently very different from what was shown when he accepted.</td>
+                <td class="col-insight">Distance shown at broadcast ≠ real-world route. Creates regret → future broadcast rejection.</td>
+                <td class="col-opportunity">Show actual route distance (not straight-line) in broadcast card.</td>
+            </tr>
+            <tr>
+                <td>Wants nearby landmarks shown in pickup and drop screens after accepting, to understand location better.</td>
+                <td class="col-insight">Drivers think in landmarks and local references — not formal addresses.</td>
+                <td class="col-opportunity">Add landmark context to pickup/drop address display.</td>
+            </tr>
+            <tr>
+                <td>If he can't find the address, calls customer or support.</td>
+                <td class="col-insight">Address findability is a recurring friction point — both at pickup and drop.</td>
+                <td class="col-opportunity">Allow drivers to attach/view landmark photos for frequently used addresses.</td>
+            </tr>
+        </table>
+
+        <!-- Pickup & Delivery Experience -->
+        <p class="section-label">Pickup & Delivery Experience</p>
+        <table class="findings-table">
+            <tr>
+                <th>Finding</th>
+                <th>Insight</th>
+                <th>Opportunity</th>
+            </tr>
+            <tr>
+                <td>Waits 5–20 mins at pickup. Sometimes customer/merchant won't answer phone, adding more delay.</td>
+                <td class="col-insight">Unpaid wait time is a tax on every order. Compounds frustration with unresponsive merchants.</td>
+                <td class="col-opportunity">Consider wait-time compensation or merchant readiness signals.</td>
+            </tr>
+            <tr>
+                <td>If pickup distance <2km, won't call consumer. If >2km, informs them he's on the way.</td>
+                <td class="col-insight">Drivers self-manage consumer communication using a distance-based heuristic.</td>
+                <td class="col-opportunity">Auto-notify consumer for longer pickups; support the driver's existing behavior.</td>
+            </tr>
+            <tr>
+                <td>Most orders are COD.</td>
+                <td class="col-insight">Cash-heavy workflow = daily cash management overhead (change, disputes, collection).</td>
+                <td class="empty">—</td>
+            </tr>
+        </table>
+
+        <!-- Work Area & Geofencing -->
+        <p class="section-label">Work Area & Geofencing</p>
+        <table class="findings-table">
+            <tr>
+                <th>Finding</th>
+                <th>Insight</th>
+                <th>Opportunity</th>
+            </tr>
+            <tr>
+                <td>Used to log in from home (Chandra Layout) but geofence was removed. Now commutes to Vijayanagar work area unpaid.</td>
+                <td class="col-insight">Geofence policy change forced unpaid commute. Driver lost flexibility he once had.</td>
+                <td class="col-opportunity">Consider expanding login zones or showing nearest active zone from driver's location.</td>
+            </tr>
+
+        </table>
+
+        <!-- Vehicle & Package Mismatch -->
+        <p class="section-label">Vehicle & Package Mismatch</p>
+        <table class="findings-table">
+            <tr>
+                <th>Finding</th>
+                <th>Insight</th>
+                <th>Opportunity</th>
+            </tr>
+            <tr>
+                <td>Gets oversized packages assigned to his bike. Suggests: let drivers choose between scooty and bike, assign packages based on that.</td>
+                <td class="col-insight">Current 2W classification is too coarse (bike AND scooty lumped together). Causes mismatches → cancellations.</td>
+                <td class="col-opportunity">Add sub-vehicle type selection (scooty vs bike). Match package size to actual vehicle capacity.</td>
+            </tr>
+            <tr>
+                <td>Double orders assigned → one gets cancelled → cancellation attributed to driver.</td>
+                <td class="col-insight">System-generated cancellations unfairly penalizing drivers. Affects MBG eligibility and driver trust.</td>
+                <td class="col-opportunity">Fix attribution logic: system-forced cancellations should not count against driver metrics.</td>
+            </tr>
+        </table>
+
+        <!-- Competitor Comparison -->
+        <p class="section-label">Competitor Comparison</p>
+        <table class="findings-table">
+            <tr>
+                <th>Finding</th>
+                <th>Insight</th>
+                <th>Opportunity</th>
+            </tr>
+            <tr>
+                <td>Earning more from Delhivery because of slots. Uses Porter and Rapido as secondary.</td>
+                <td class="col-insight">Slots are a genuine competitive advantage when they work — drivers stay loyal for guaranteed income.</td>
+                <td class="col-opportunity">Protect and improve slots experience — it's the retention hook.</td>
+            </tr>
+
+        </table>
+
+        <!-- Top Support Issues -->
+        <p class="section-label">Top Support Issues (Self-Reported)</p>
+        <table class="findings-table">
+            <tr>
+                <th>Issue</th>
+                <th>Root Cause</th>
+                <th>Opportunity</th>
+            </tr>
+            <tr>
+                <td>1. Customer not taking phone / not responding</td>
+                <td class="col-insight">Driver has no way to escalate or proceed when the consumer is unreachable. Gets stuck waiting with no next step.</td>
+                <td class="col-opportunity">Auto-escalate unresponsive customer after N attempts. Provide clear next-step flow in-app.</td>
+            </tr>
+            <tr>
+                <td>2. Oversized packages assigned to bike</td>
+                <td class="col-insight">Current 2W classification lumps scooty and bike together. System doesn't account for actual carrying capacity, sending large packages to bikes that can't handle them.</td>
+                <td class="col-opportunity">Ask driver to choose scooty or bike during registration. Assign packages based on that vehicle sub-type and its capacity.</td>
+            </tr>
+            <tr>
+                <td>3. Double orders — getting two orders at once, one gets cancelled, cancellation falls under driver's name</td>
+                <td class="col-insight">System assigns multiple orders simultaneously. When one is cancelled (not by driver), the cancellation is still attributed to the driver. This unfairly impacts their record.</td>
+                <td class="col-opportunity">Fix attribution logic: system-forced or double-order cancellations should not count against driver metrics.</td>
+            </tr>
+            <tr>
+                <td>4. Not able to mark arrived or start trip</td>
+                <td class="col-insight">Core app action (swipe/mark) fails to register or display. Driver is stuck and has to call ops to manually update the status.</td>
+                <td class="col-opportunity">Fix swipe reliability. Add fallback tap action. Ensure state syncs correctly after marking.</td>
+            </tr>
+            <tr>
+                <td>5. Can't tell if cancellation is consumer-related or driver-related</td>
+                <td class="col-insight">Driver doesn't know who cancelled — customer, system, or themselves. This matters because MBG won't pay if driver cancels more than 1 trip. Without clear attribution, drivers feel penalized unfairly.</td>
+                <td class="col-opportunity">Show clear cancellation reason + who initiated it (customer vs driver vs system) in order history. Separate MBG penalty logic for system/customer cancellations.</td>
+            </tr>
+        </table>
+
+    </div>
+</details>
+
+<!-- ==================== INTERVIEW #3 ==================== -->
+<details class="interview-accordion">
+    <summary>
+        <span class="chevron">▶</span>
+        <div class="info">
+            <h3>Murugan G</h3>
+            <p>Distance mismatch, address issues, swipe failures, fare comparison with Porter, slot notifications</p>
+        </div>
+        <div class="tags">
+            <span class="meta-tag role">Driver (2W)</span>
+            <span class="meta-tag date">Aug 2026</span>
+        </div>
+    </summary>
+    <div class="interview-content">
+
+        <!-- Driver Profile + Analytics (compact) -->
+        <p class="section-label">Driver Profile & Analytics</p>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 12px;">
+            <div style="background: var(--bg); border-radius: 8px; padding: 14px 16px; font-size: 0.84rem; line-height: 1.8;">
+                <strong style="color: var(--dark);">Vehicle:</strong> 2W — Bike (KA05LK3081)<br>
+                <strong style="color: var(--dark);">Tier:</strong> Star<br>
+                <strong style="color: var(--dark);">Tenure:</strong> 1.2 months (joined Jul '25, first order Mar '26)<br>
+                <strong style="color: var(--dark);">Area:</strong> Bannerghatta, Bangalore<br>
+                <strong style="color: var(--dark);">Earning Goal:</strong> ₹1,000/day after expenses (₹14K/week when at Dunzo)<br>
+                <strong style="color: var(--dark);">Other apps:</strong> Porter<br>
+                <strong style="color: var(--dark);">Previous:</strong> Dunzo (knows demand areas from that experience)<br>
+                <strong style="color: var(--dark);">Status:</strong> Active (no order in 7 days)
+            </div>
+            <div style="background: var(--bg); border-radius: 8px; padding: 14px 16px; font-size: 0.84rem; line-height: 1.8;">
+                <strong style="color: var(--dark);">Lifetime deliveries:</strong> 347 &nbsp;|&nbsp; <strong>L30D:</strong> 95<br>
+                <strong style="color: var(--dark);">Rating:</strong> 4.7 lifetime / 4.92 L30D<br>
+                <strong style="color: var(--dark);">Completion:</strong> 76.63% &nbsp;|&nbsp; <strong>Cancel:</strong> 1.61%<br>
+                <strong style="color: var(--dark);">L30D Earnings:</strong> ₹13,379 (₹787 today)<br>
+                <strong style="color: var(--dark);">On-time pickup:</strong> 100%<br>
+                <strong style="color: var(--dark);">On-time drop:</strong> 97.89%<br>
+                <strong style="color: var(--dark);">On-time overall:</strong> 98.95%<br>
+                <strong style="color: var(--dark);">Bad ratings:</strong> 0<br>
+                <strong style="color: var(--dark);">Slots:</strong> 23 booked / 13 completed
+            </div>
+        </div>
+
+        <!-- Broadcast & Order Acceptance -->
+        <p class="section-label">Broadcast & Order Acceptance</p>
+        <table class="findings-table">
+            <tr>
+                <th>Finding</th>
+                <th>Insight</th>
+                <th>Opportunity</th>
+            </tr>
+            <tr>
+                <td>Pickup distance is the primary filter — should be below 3km for him to accept.</td>
+                <td class="col-insight">Drivers have a hard threshold for pickup distance. Anything beyond it is an automatic reject regardless of fare.</td>
+                <td class="col-opportunity">Consider pickup distance as a factor in broadcast targeting — don't send orders with >3km pickup to drivers who consistently reject them.</td>
+            </tr>
+            <tr>
+                <td>Information shown in broadcast is enough for him to decide.</td>
+                <td class="col-insight">Not all drivers need more info — some have streamlined their decision to distance + amount only.</td>
+                <td class="empty">—</td>
+            </tr>
+            <tr>
+                <td>During slots, orders are auto-assigned but sometimes there's no sound notification. Out of 6 orders, misses 1–2 because of this.</td>
+                <td class="col-insight">Silent auto-assign = missed orders → cancellations attributed to driver. Notification reliability is critical for slot drivers.</td>
+                <td class="col-opportunity">Ensure loud, reliable notification for auto-assigned slot orders. Add persistent visual alert if sound fails.</td>
+            </tr>
+            <tr>
+                <td>Uses experience from Dunzo to know where high-demand areas are. Goes there proactively.</td>
+                <td class="col-insight">Cross-platform knowledge transfer — veteran multi-app drivers carry mental maps across apps.</td>
+                <td class="col-opportunity">Surface demand zones in-app to give all drivers what veterans already know.</td>
+            </tr>
+        </table>
+
+        <!-- App Reliability & Usability -->
+        <p class="section-label">App Reliability & Usability</p>
+        <table class="findings-table">
+            <tr>
+                <th>Finding</th>
+                <th>Insight</th>
+                <th>Opportunity</th>
+            </tr>
+            <tr>
+                <td>Not able to swipe — calls ops team to mark status.</td>
+                <td class="col-insight">Swipe failure confirmed again (3rd source). Ops team is being used as a manual override for a broken core action.</td>
+                <td class="col-opportunity">Fix swipe reliability. Add fallback button. Track swipe failure rate as a product metric.</td>
+            </tr>
+            <tr>
+                <td>When he tries to go offline after his login hours are completed, he still gets an order. He cancels that order.</td>
+                <td class="col-insight">System sends orders even when driver is trying to end shift. Forces a cancellation that counts against them.</td>
+                <td class="col-opportunity">Respect driver's intent to go offline — don't assign new orders during logout transition. Add "winding down" state.</td>
+            </tr>
+        </table>
+
+        <!-- Route & Address Issues -->
+        <p class="section-label">Route & Address Issues</p>
+        <table class="findings-table">
+            <tr>
+                <th>Finding</th>
+                <th>Insight</th>
+                <th>Opportunity</th>
+            </tr>
+            <tr>
+                <td>Pickup distance shown vs actual distance is completely different.</td>
+                <td class="col-insight">Straight-line vs road distance gap confirmed again. Creates broken trust in broadcast info.</td>
+                <td class="col-opportunity">Show route-based distance in broadcast, not straight-line.</td>
+            </tr>
+            <tr>
+                <td>Customer says "I marked correct address" but app shows a different place. Driver calls customer, gets correct address, travels extra. Customer blames driver. Delhivery doesn't pay for extra distance. Porter pays for extra movement (>1km).</td>
+                <td class="col-insight">Address mismatch creates a triple penalty: extra travel (unpaid), customer anger (directed at driver), and no compensation. Porter's model (pay for extra km) is the benchmark.</td>
+                <td class="col-opportunity">Detect address deviation >1km and compensate driver for extra distance. Porter already does this.</td>
+            </tr>
+            <tr>
+                <td>Calls customer every time to check which shop to come to. For repeat pickups, he knows the shop already.</td>
+                <td class="col-insight">Addresses alone aren't precise enough for commercial pickups — drivers need shop-level specificity.</td>
+                <td class="col-opportunity">Show merchant/shop name prominently. Cache known merchants for repeat orders.</td>
+            </tr>
+        </table>
+
+        <!-- Pricing & Earnings -->
+        <p class="section-label">Pricing & Earnings</p>
+        <table class="findings-table">
+            <tr>
+                <th>Finding</th>
+                <th>Insight</th>
+                <th>Opportunity</th>
+            </tr>
+            <tr>
+                <td>Porter gives more money. Example: 47km = ₹520 on Delhivery vs 40km = ₹600 on Porter.</td>
+                <td class="col-insight">Per-km rate is visibly lower than Porter. Drivers do direct comparisons and remember specific examples.</td>
+                <td class="col-opportunity">Review pricing parity with Porter, especially for long-distance orders.</td>
+            </tr>
+            <tr>
+                <td>In Delhivery slots, system counts only drop km — not pickup distance — for earnings calculation.</td>
+                <td class="col-insight">Drivers travel to pickup unpaid. If pickup is 5km and drop is 3km, they're paid for 3km of an 8km journey. Feels exploitative.</td>
+                <td class="col-opportunity">Include pickup distance in fare calculation, or at minimum show total distance (pickup + drop) so drivers understand the full picture.</td>
+            </tr>
+            <tr>
+                <td>Waiting time at customer — not being paid for it.</td>
+                <td class="col-insight">Unpaid wait time confirmed again. Combined with unpaid pickup distance, drivers feel they're absorbing too much cost.</td>
+                <td class="col-opportunity">Introduce wait-time compensation after a threshold (e.g., 5 mins).</td>
+            </tr>
+            <tr>
+                <td>No problem with earnings transparency. Initially confused about "collect from customer" (COD added to wallet), but understood it over time.</td>
+                <td class="col-insight">Earnings page is understandable once learned — but COD wallet flow is confusing for new drivers.</td>
+                <td class="col-opportunity">Better onboarding for COD wallet flow — explain "collect from customer" clearly on first encounter.</td>
+            </tr>
+        </table>
+
+        <!-- Slots & Cancellation -->
+        <p class="section-label">Slots & Cancellation</p>
+        <table class="findings-table">
+            <tr>
+                <th>Finding</th>
+                <th>Insight</th>
+                <th>Opportunity</th>
+            </tr>
+            <tr>
+                <td>No issues with slots — he likes them.</td>
+                <td class="col-insight">Slots working well for this driver segment (2W, experienced, committed).</td>
+                <td class="empty">—</td>
+            </tr>
+            <tr>
+                <td>Cancellation charge now added when customer cancels after driver reaches the location.</td>
+                <td class="col-insight">This is a positive recent change — driver appreciates being compensated when customer wastes their time.</td>
+                <td class="col-opportunity">Communicate this policy clearly to all drivers — it's a retention-positive feature.</td>
+            </tr>
+        </table>
+
+        <!-- Competitor Comparison -->
+        <p class="section-label">Competitor Comparison</p>
+        <table class="findings-table">
+            <tr>
+                <th>Finding</th>
+                <th>Insight</th>
+                <th>Opportunity</th>
+            </tr>
+            <tr>
+                <td>Porter gives more money — that's the only difference he cites.</td>
+                <td class="col-insight">Price is the primary differentiator. App experience, features, etc. are secondary to per-order earnings.</td>
+                <td class="col-opportunity">Compete on effective earnings (fare + incentives + slot guarantee) rather than just base fare.</td>
+            </tr>
+            <tr>
+                <td>Porter: return orders need to be near home at end of day.</td>
+                <td class="col-insight">Porter has a return-to-home-zone feature that drivers value — reduces dead-km at end of shift.</td>
+                <td class="col-opportunity">Consider end-of-shift routing that brings drivers closer to home.</td>
+            </tr>
+            <tr>
+                <td>Feels there should NOT be a bike vs scooty distinction — most consumers prefer scooty, so bike drivers lose out.</td>
+                <td class="col-insight">Vehicle sub-type differentiation (from previous interview's suggestion) has a counter-argument: if consumers prefer scooty, bike-only drivers would get fewer orders.</td>
+                <td class="col-opportunity">Important design tension — vehicle sub-typing needs careful demand balancing. Note: contradicts previous driver's suggestion.</td>
+            </tr>
+        </table>
+
+        <!-- Onboarding & Learning -->
+        <p class="section-label">Onboarding & Learning</p>
+        <table class="findings-table">
+            <tr>
+                <th>Finding</th>
+                <th>Insight</th>
+                <th>Opportunity</th>
+            </tr>
+            <tr>
+                <td>Training videos would help, but only 50–60%. Remaining 40% has to be learned by doing — experiencing the app.</td>
+                <td class="col-insight">Videos are supplementary, not sufficient. Real learning happens through live orders. First few orders are the critical learning window.</td>
+                <td class="col-opportunity">Combine training videos with guided first-order experience (hand-holding for first 3–5 orders).</td>
+            </tr>
+            <tr>
+                <td>Initially confused by "collect from customer" earnings data — didn't understand COD wallet flow.</td>
+                <td class="col-insight">COD wallet is the #1 confusion point for new drivers. Money collected vs money earned distinction is unclear.</td>
+                <td class="col-opportunity">Clearer COD flow explanation during onboarding + contextual tooltip on earnings page.</td>
+            </tr>
+        </table>
+
+        <!-- Top Support Issues -->
+        <p class="section-label">Top Support Issues (Self-Reported)</p>
+        <table class="findings-table">
+            <tr>
+                <th>Issue</th>
+                <th>Root Cause</th>
+                <th>Opportunity</th>
+            </tr>
+            <tr>
+                <td>1. Long pickup distance (shown vs actual mismatch)</td>
+                <td class="col-insight">System shows straight-line distance, actual road distance is much more. Driver commits based on wrong info.</td>
+                <td class="col-opportunity">Show route-based distance. Consider hard cap on pickup assignment radius.</td>
+            </tr>
+            <tr>
+                <td>2. Fare is much lower compared to Porter</td>
+                <td class="col-insight">Direct per-km comparison puts Delhivery at a disadvantage. Drivers share these comparisons with each other.</td>
+                <td class="col-opportunity">Review fare structure. If base fare can't match, compensate through pickup km + wait time pay.</td>
+            </tr>
+            <tr>
+                <td>3. Support team is not connecting / hard to reach</td>
+                <td class="col-insight">When driver has a live issue (stuck swipe, address problem), delayed support = lost time and money.</td>
+                <td class="col-opportunity">Faster support response for live-trip issues. In-app self-serve for common problems (swipe stuck, address wrong).</td>
+            </tr>
+            <tr>
+                <td>4. Customer location problem — app shows wrong place, driver travels extra unpaid</td>
+                <td class="col-insight">Address accuracy is a platform-level issue. Driver absorbs the cost of the system's error.</td>
+                <td class="col-opportunity">Detect route deviation >1km and auto-compensate. Porter already does this.</td>
+            </tr>
+            <tr>
+                <td>5. Oversized package — customer won't cancel, driver is stuck</td>
+                <td class="col-insight">Driver can't refuse oversized package without taking a cancellation hit. Customer won't cancel either. Driver is trapped.</td>
+                <td class="col-opportunity">Allow driver-initiated cancel for "package too large" without penalty. Add package size verification at booking.</td>
+            </tr>
+        </table>
 
     </div>
 </details>
