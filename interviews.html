@@ -509,11 +509,11 @@
             </tr>
             <tr>
                 <td>During slots, orders are auto-assigned but sometimes there's no sound notification. Out of 6 orders, misses 1–2 because of this.</td>
-                <td class="col-insight">Silent auto-assign = missed orders → cancellations attributed to driver. Notification reliability is critical for slot drivers.</td>
-                <td class="col-opportunity">Ensure loud, reliable notification for auto-assigned slot orders. Add persistent visual alert if sound fails.</td>
+                <td class="col-insight">Silent auto-assign means drivers miss noticing the order entirely — they remain unaware for some time. The app does use sounds, but sometimes the sound doesn't come through, and the root cause is unclear.</td>
+                <td class="col-opportunity">Investigate why notification sound fails intermittently (OS-level permissions, battery optimization, app state?). Add a fallback mechanism — persistent visual alert, vibration, or repeated notification — to ensure drivers never miss an auto-assigned order.</td>
             </tr>
             <tr>
-                <td>Uses experience from Dunzo to know where high-demand areas are. Goes there proactively.</td>
+                <td>As he was delivering since Dunzo and then Porter, he knows where all the high-demand areas are. Goes there proactively.</td>
                 <td class="col-insight">Cross-platform knowledge transfer — veteran multi-app drivers carry mental maps across apps.</td>
                 <td class="col-opportunity">Surface demand zones in-app to give all drivers what veterans already know.</td>
             </tr>
@@ -558,9 +558,9 @@
                 <td class="col-opportunity">Detect address deviation >1km and compensate driver for extra distance. Porter already does this.</td>
             </tr>
             <tr>
-                <td>Calls customer every time to check which shop to come to. For repeat pickups, he knows the shop already.</td>
-                <td class="col-insight">Addresses alone aren't precise enough for commercial pickups — drivers need shop-level specificity.</td>
-                <td class="col-opportunity">Show merchant/shop name prominently. Cache known merchants for repeat orders.</td>
+                <td>Most of the time he calls customer to confirm the exact place to reach. For repeat customers — shops he's delivered to before on Delhivery or Porter — he knows who they are and reaches their place without calling.</td>
+                <td class="col-insight">Familiarity with a customer eliminates the call, reduces confusion, and speeds up pickup. Repeat driver-customer pairings naturally reduce friction.</td>
+                <td class="col-opportunity">Rank driver assignment by past delivery history with that customer + proximity. If a driver has delivered to the same customer/shop multiple times and is nearby, prioritize them. This reduces pickup time and increases fulfillment — the driver already knows the exact location.</td>
             </tr>
         </table>
 
@@ -628,8 +628,8 @@
                 <td class="col-opportunity">Compete on effective earnings (fare + incentives + slot guarantee) rather than just base fare.</td>
             </tr>
             <tr>
-                <td>Porter: return orders need to be near home at end of day.</td>
-                <td class="col-insight">Porter has a return-to-home-zone feature that drivers value — reduces dead-km at end of shift.</td>
+                <td>Rapido: return orders need to be near home at end of day.</td>
+                <td class="col-insight">Rapido has a return-to-home-zone feature that drivers value — reduces dead-km at end of shift.</td>
                 <td class="col-opportunity">Consider end-of-shift routing that brings drivers closer to home.</td>
             </tr>
             <tr>
@@ -653,9 +653,9 @@
                 <td class="col-opportunity">Combine training videos with guided first-order experience (hand-holding for first 3–5 orders).</td>
             </tr>
             <tr>
-                <td>Initially confused by "collect from customer" earnings data — didn't understand COD wallet flow.</td>
-                <td class="col-insight">COD wallet is the #1 confusion point for new drivers. Money collected vs money earned distinction is unclear.</td>
-                <td class="col-opportunity">Clearer COD flow explanation during onboarding + contextual tooltip on earnings page.</td>
+                <td>Initially confused by "collect from customer" earnings data. But after 2 orders he learned how to do it.</td>
+                <td class="col-insight">COD wallet flow is briefly confusing but self-resolves quickly through experience. Not a lasting pain point — drivers figure it out within their first few orders.</td>
+                <td class="col-opportunity">Low priority — a simple one-time tooltip on the first COD order would eliminate even the brief confusion, but this isn't blocking anyone.</td>
             </tr>
         </table>
 
@@ -693,6 +693,12 @@
                 <td class="col-opportunity">Allow driver-initiated cancel for "package too large" without penalty. Add package size verification at booking.</td>
             </tr>
         </table>
+
+        <!-- Interview Snippet -->
+        <p class="section-label">Interview Snippet</p>
+        <div style="margin-top: 12px;">
+            <img src="images/interview-murugan.jpg" alt="Interview session with Murugan G" style="width: 240px; border-radius: 8px; opacity: 0.9;">
+        </div>
 
     </div>
 </details>
