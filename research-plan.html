@@ -41,10 +41,6 @@
         th { background: var(--dark); color: var(--white); font-weight: 600; }
         tr:nth-child(even) { background: #F8F9FA; }
         .tag { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.75rem; font-weight: 600; margin-right: 6px; }
-        .tag-week1 { background: #DBEAFE; color: #1E40AF; }
-        .tag-week2 { background: #D1FAE5; color: #065F46; }
-        .tag-week3 { background: #FEF3C7; color: #92400E; }
-        .tag-week4 { background: #FCE7F3; color: #9D174D; }
         .checklist { list-style: none; padding-left: 0; }
         .checklist li { padding: 10px 16px; background: var(--white); border: 1px solid var(--border); border-radius: 8px; margin-bottom: 8px; display: flex; align-items: center; gap: 10px; }
         .checklist li::before { content: "☐"; font-size: 1.1rem; }
@@ -104,13 +100,11 @@
     <div class="container">
         <a href="#goal">Goal</a>
         <a href="#context">Context</a>
+        <a href="#questions">Research Questions</a>
         <a href="#phase0">Phase 0</a>
         <a href="#phase1">Phase 1</a>
         <a href="#phase2">Phase 2</a>
         <a href="#phase3">Phase 3</a>
-        <a href="#timeline">Timeline</a>
-        <a href="#checklist">Checklist</a>
-        <a href="#tips">Tips</a>
     </div>
 </nav>
 
@@ -123,16 +117,6 @@
     <div class="highlight-box">
         <p><strong>"Understand how drivers interact with the Delhivery Local app across their daily workflow — their mental models, pain points, workarounds, and unmet needs — to inform a full experience revamp that improves fulfillment rate, reduces cancellations, and increases driver retention."</strong></p>
     </div>
-    <h3>Research Questions</h3>
-    <ol>
-        <li>How do drivers structure their working day, and where does the Delhivery Local app fit alongside other apps (Porter, Rapido, Uber)?</li>
-        <li>What is the driver's mental model of the app's core flow (broadcast → accept → pickup → deliver → mark complete)?</li>
-        <li>Where do drivers experience friction, confusion, or anxiety during the order lifecycle?</li>
-        <li>How do drivers discover and use secondary features (Trip Radar, Slots, Incentives, Performance, Earnings)?</li>
-        <li>What workarounds have drivers built to compensate for app limitations?</li>
-        <li>Why do drivers cancel orders, and what conditions lead to repeated cancellations?</li>
-        <li>What drives a driver to prefer a competitor app over Delhivery Local?</li>
-    </ol>
 </section>
 
 <!-- CONTEXT -->
@@ -263,63 +247,20 @@
     </div>
 </section>
 
-<!-- PHASE 0 -->
-<section id="phase0">
-    <h2>Phase 0: Stakeholder & Data Alignment</h2>
-    <p><span class="tag tag-week1">Week 1: Aug 4–8</span></p>
-    <p>Before talking to drivers, arm yourself with internal context so you ask sharper questions during field research.</p>
-    <div class="card">
-        <h4>1. Product Manager Conversations</h4>
-        <p><strong>Who:</strong> Your PMs</p>
-        <p><strong>What to get:</strong></p>
-        <ul>
-            <li>Existing hypotheses about driver problems</li>
-            <li>Features/changes already in the pipeline</li>
-            <li>Business priorities for this quarter</li>
-            <li>Known pain points from their perspective</li>
-            <li>Any previous research or data they've seen</li>
-        </ul>
-    </div>
-    <div class="card">
-        <h4>2. Ops Team Conversations</h4>
-        <p><strong>Who:</strong> Ops leads, driver support team</p>
-        <p><strong>What to get:</strong></p>
-        <ul>
-            <li>Top categories of driver support queries</li>
-            <li>Most common complaints from drivers</li>
-            <li>Cancellation reasons (from ops perspective)</li>
-            <li>Suspension patterns — why and how often</li>
-            <li>How new drivers learn the app</li>
-            <li>On-ground driver feedback they've heard informally</li>
-        </ul>
-    </div>
-    <div class="card">
-        <h4>3. Analytics Data Pull</h4>
-        <p><strong>Source:</strong> Business analytics dashboard</p>
-        <p><strong>Metrics to pull:</strong></p>
-        <ul>
-            <li>Order acceptance rate (overall + by vehicle type)</li>
-            <li>Cancellation rate + top cancellation reasons</li>
-            <li>Time-to-pickup distribution</li>
-            <li>Feature adoption rates (Trip Radar, Slots, Incentives)</li>
-            <li>Driver churn rate + reasons for leaving</li>
-            <li>DAU/MAU and session patterns</li>
-            <li>Cohort differences (new vs veteran, 2W vs 3W vs 4W)</li>
-        </ul>
-    </div>
-    <div class="card">
-        <h4>4. Competitive Audit</h4>
-        <p><strong>Apps to review:</strong> Porter Driver, Rapido Captain, Uber Driver</p>
-        <p><strong>What to document:</strong></p>
-        <ul>
-            <li>Home screen layout and information hierarchy</li>
-            <li>Order acceptance flow</li>
-            <li>Navigation/maps integration</li>
-            <li>Earnings and incentives presentation</li>
-            <li>Performance/rating display</li>
-            <li>Overall UX patterns and design language</li>
-        </ul>
-    </div>
+<!-- RESEARCH QUESTIONS -->
+<section id="questions">
+    <h2>Research Questions</h2>
+    <ol>
+        <li>How do drivers structure their working day, and where does the Delhivery Local app fit alongside other apps (Porter, Rapido, Uber)?</li>
+        <li>What is the driver's mental model of the app's core flow (broadcast → accept → pickup → deliver → mark complete)?</li>
+        <li>Where do drivers experience friction, confusion, or anxiety during the order lifecycle?</li>
+        <li>How do drivers discover and use secondary features (Trip Radar, Slots, Incentives, Performance, Earnings)?</li>
+        <li>What workarounds have drivers built to compensate for app limitations?</li>
+        <li>Why do drivers cancel orders, and what conditions lead to repeated cancellations?</li>
+        <li>What drives a driver to prefer a competitor app over Delhivery Local?</li>
+    </ol>
+
+    <h3>Interview Question Banks</h3>
 
     <details>
         <summary>PM Interview Questions (26 questions)</summary>
@@ -525,6 +466,78 @@
         </div>
     </details>
 
+    <div class="card">
+        <h4>Things to Watch For (Data-Backed)</h4>
+        <ul>
+            <li><strong>COD friction:</strong> 80% of orders are COD — observe cash handling pain points</li>
+            <li><strong>Broadcast decision-making:</strong> 95% of broadcasts are ignored. System pings 9-14 drivers before one accepts. Watch: do they see the notification? What info makes them decide? How fast can they process it?</li>
+            <li><strong>Multi-app switching:</strong> 5,794 cancellations from drivers moving AWAY from pickup (doing another app's order). Watch: how many apps are open? Which is "primary"?</li>
+            <li><strong>Distance surprise:</strong> 23% of cancellations are because actual route is longer than expected. Watch: what does the broadcast show vs. what navigation reveals after accepting</li>
+            <li><strong>Pickup waiting:</strong> 12 min average wait at pickup (unpaid). 50% of "driver issue" = verified refusal at pickup. Watch: what happens when they arrive and package isn't ready</li>
+            <li><strong>Night behavior:</strong> Fulfillment collapses to 10-25% after 9 PM. Do they stop because of safety? Fatigue? No demand on other apps either?</li>
+            <li><strong>Slot/MBG perception:</strong> Declining (9.5% → 7.5%). 8-hr exclusivity + no-cancel rules — do they find this too restrictive?</li>
+            <li><strong>Star awareness:</strong> Do drivers know their tier? Does it motivate them? Do they know what improves it?</li>
+        </ul>
+    </div>
+</section>
+
+<!-- PHASE 0 -->
+<section id="phase0">
+    <h2>Phase 0: Stakeholder & Data Alignment</h2>
+    <p>Before talking to drivers, arm yourself with internal context so you ask sharper questions during field research.</p>
+    <div class="card">
+        <h4>1. Product Manager Conversations</h4>
+        <p><strong>Who:</strong> Your PMs</p>
+        <p><strong>What to get:</strong></p>
+        <ul>
+            <li>Existing hypotheses about driver problems</li>
+            <li>Features/changes already in the pipeline</li>
+            <li>Business priorities for this quarter</li>
+            <li>Known pain points from their perspective</li>
+            <li>Any previous research or data they've seen</li>
+        </ul>
+    </div>
+    <div class="card">
+        <h4>2. Ops Team Conversations</h4>
+        <p><strong>Who:</strong> Ops leads, driver support team</p>
+        <p><strong>What to get:</strong></p>
+        <ul>
+            <li>Top categories of driver support queries</li>
+            <li>Most common complaints from drivers</li>
+            <li>Cancellation reasons (from ops perspective)</li>
+            <li>Suspension patterns — why and how often</li>
+            <li>How new drivers learn the app</li>
+            <li>On-ground driver feedback they've heard informally</li>
+        </ul>
+    </div>
+    <div class="card">
+        <h4>3. Analytics Data Pull</h4>
+        <p><strong>Source:</strong> Business analytics dashboard</p>
+        <p><strong>Metrics to pull:</strong></p>
+        <ul>
+            <li>Order acceptance rate (overall + by vehicle type)</li>
+            <li>Cancellation rate + top cancellation reasons</li>
+            <li>Time-to-pickup distribution</li>
+            <li>Feature adoption rates (Trip Radar, Slots, Incentives)</li>
+            <li>Driver churn rate + reasons for leaving</li>
+            <li>DAU/MAU and session patterns</li>
+            <li>Cohort differences (new vs veteran, 2W vs 3W vs 4W)</li>
+        </ul>
+    </div>
+    <div class="card">
+        <h4>4. Competitive Audit</h4>
+        <p><strong>Apps to review:</strong> Porter Driver, Rapido Captain, Uber Driver</p>
+        <p><strong>What to document:</strong></p>
+        <ul>
+            <li>Home screen layout and information hierarchy</li>
+            <li>Order acceptance flow</li>
+            <li>Navigation/maps integration</li>
+            <li>Earnings and incentives presentation</li>
+            <li>Performance/rating display</li>
+            <li>Overall UX patterns and design language</li>
+        </ul>
+    </div>
+
     <div class="highlight-box">
         <p><strong>Key framing (from PM):</strong> Don't look at this only through the design lens. Categorize findings into: <strong>App-solvable</strong> (broadcast info, navigation, feature discovery), <strong>Ops-solvable</strong> (package not ready, merchant education), <strong>Economics-solvable</strong> (fare structure, MBG guarantee, night premium), and <strong>System-solvable</strong> (broadcast algorithm, assignment radius, penalty logic).</p>
     </div>
@@ -537,7 +550,6 @@
 <!-- PHASE 1 -->
 <section id="phase1">
     <h2>Phase 1: Field Research with Drivers</h2>
-    <p><span class="tag tag-week2">Week 2: Aug 11–15</span> <span class="tag tag-week3">Week 3: Aug 18–22</span></p>
     <p>The core of the research. Three complementary methods to build a complete picture.</p>
     <div class="card">
         <span class="method-badge">Primary Method</span>
@@ -633,7 +645,6 @@
 <!-- PHASE 2 -->
 <section id="phase2">
     <h2>Phase 2: Synthesis & Analysis</h2>
-    <p><span class="tag tag-week3">Week 3–4: Aug 22–29</span></p>
     <p>Transform raw observations into actionable design insights.</p>
     <div class="card">
         <h4>1. Affinity Mapping</h4>
@@ -693,7 +704,6 @@
 <!-- PHASE 3 -->
 <section id="phase3">
     <h2>Phase 3: Recommendations & Presentation</h2>
-    <p><span class="tag tag-week4">End of Aug</span></p>
     <div class="card">
         <h4>Deliverable Structure</h4>
         <ol>
@@ -706,106 +716,6 @@
             <li><strong>Design Recommendations</strong> — "Now, Next, Later" framework</li>
             <li><strong>Appendix</strong> — Raw notes, session recordings, survey data</li>
         </ol>
-    </div>
-    <div class="card">
-        <h4>"Now, Next, Later" Framework</h4>
-        <table>
-            <tr><th>Timeframe</th><th>Description</th><th>Example</th></tr>
-            <tr><td><strong>Now</strong></td><td>Quick wins with TARMAC migration</td><td>Clearer homepage IA, better broadcast info</td></tr>
-            <tr><td><strong>Next</strong></td><td>Medium-effort, next quarter</td><td>Redesigned earnings, trip planning</td></tr>
-            <tr><td><strong>Later</strong></td><td>Larger structural changes</td><td>Proactive recommendations, smart scheduling</td></tr>
-        </table>
-    </div>
-</section>
-
-<!-- TIMELINE -->
-<section id="timeline">
-    <h2>Timeline</h2>
-    <div class="timeline">
-        <div class="timeline-item">
-            <h4><span class="tag tag-week1">Week 1</span> Aug 4–8: Stakeholder & Data Alignment</h4>
-            <p>PM conversations, Ops team interviews, analytics pull, competitive audit, research prep</p>
-        </div>
-        <div class="timeline-item">
-            <h4><span class="tag tag-week2">Week 2</span> Aug 11–15: Field Research Batch 1</h4>
-            <p>4–5 ride-alongs + intercept surveys at driver hubs. Begin noting patterns.</p>
-        </div>
-        <div class="timeline-item">
-            <h4><span class="tag tag-week3">Week 3</span> Aug 18–22: Field Research Batch 2</h4>
-            <p>4–5 more ride-alongs + in-office usability testing (5–6 drivers). Begin synthesis.</p>
-        </div>
-        <div class="timeline-item">
-            <h4><span class="tag tag-week4">Week 4</span> Aug 25–29: Synthesis & Report</h4>
-            <p>Affinity mapping, journey map, personas, opportunity scoring, final presentation.</p>
-        </div>
-    </div>
-    <div class="card">
-        <h4>Daily Breakdown — Week 1</h4>
-        <table>
-            <tr><th>Day</th><th>Activity</th></tr>
-            <tr><td>Mon Aug 4</td><td>PM sync #1 — gather hypotheses and pipeline features</td></tr>
-            <tr><td>Tue Aug 5</td><td>Ops team deep-dive — support queries, complaints, churn data</td></tr>
-            <tr><td>Wed Aug 6</td><td>Analytics dashboard pull + begin analysis</td></tr>
-            <tr><td>Thu Aug 7</td><td>Competitive audit (Porter, Rapido, Uber driver apps)</td></tr>
-            <tr><td>Fri Aug 8</td><td>Write "What We Already Know" doc + prepare interview guide + recruit</td></tr>
-        </table>
-    </div>
-</section>
-
-<!-- CHECKLIST -->
-<section id="checklist">
-    <h2>Action Checklist</h2>
-    <ul class="checklist">
-        <li>Speak with Ops team about top support queries and driver complaints</li>
-        <li>Check with PMs about features/changes already in pipeline</li>
-        <li>Check with PMs about existing hypotheses to validate</li>
-        <li>Get driver churn data and reasons from data/ops team</li>
-        <li>Check how new drivers learn the app (onboarding gap from other app)</li>
-        <li>Do competitive audit of Porter, Rapido, Uber driver apps</li>
-        <li>Coordinate with ops team for Kannada/Hindi translation support</li>
-        <li>Prepare observation template before field visits</li>
-        <li>Get consent forms ready for recording sessions</li>
-        <li>Set up Google Form for intercept surveys</li>
-        <li>Recruit diverse participant pool (vehicle type, tenure, age, activity level)</li>
-        <li>Check with team about driver incentives for research participation</li>
-    </ul>
-</section>
-
-<!-- TIPS -->
-<section id="tips">
-    <h2>Tips & Considerations</h2>
-    <div class="card">
-        <h4>Managing the Language Barrier</h4>
-        <ul>
-            <li><strong>Brief your translator beforehand</strong> — share key questions in advance</li>
-            <li><strong>Use visual methods</strong> — "show me" rather than "tell me"</li>
-            <li><strong>Create a simple observation template</strong> — note body language, hesitations, tap patterns</li>
-            <li><strong>Card sorting exercises</strong> — visual and less language-dependent</li>
-            <li><strong>Record everything</strong> — get detailed translations later</li>
-        </ul>
-    </div>
-    <div class="card">
-        <h4>Ride-Along Best Practices</h4>
-        <ul>
-            <li>Don't interrupt — observe first, ask during natural breaks</li>
-            <li>Note the environment — noise, weather, traffic affect usability</li>
-            <li>Pay attention to what they do between orders</li>
-            <li>Ask "why" gently — "I noticed you did X, can you tell me why?"</li>
-            <li>Document their phone setup — brightness, notifications, other apps</li>
-        </ul>
-    </div>
-    <div class="card">
-        <h4>Things to Watch For (Data-Backed)</h4>
-        <ul>
-            <li><strong>COD friction:</strong> 80% of orders are COD — observe cash handling pain points</li>
-            <li><strong>Broadcast decision-making:</strong> 95% of broadcasts are ignored. System pings 9-14 drivers before one accepts. Watch: do they see the notification? What info makes them decide? How fast can they process it?</li>
-            <li><strong>Multi-app switching:</strong> 5,794 cancellations from drivers moving AWAY from pickup (doing another app's order). Watch: how many apps are open? Which is "primary"?</li>
-            <li><strong>Distance surprise:</strong> 23% of cancellations are because actual route is longer than expected. Watch: what does the broadcast show vs. what navigation reveals after accepting</li>
-            <li><strong>Pickup waiting:</strong> 12 min average wait at pickup (unpaid). 50% of "driver issue" = verified refusal at pickup. Watch: what happens when they arrive and package isn't ready</li>
-            <li><strong>Night behavior:</strong> Fulfillment collapses to 10-25% after 9 PM. Do they stop because of safety? Fatigue? No demand on other apps either?</li>
-            <li><strong>Slot/MBG perception:</strong> Declining (9.5% → 7.5%). 8-hr exclusivity + no-cancel rules — do they find this too restrictive?</li>
-            <li><strong>Star awareness:</strong> Do drivers know their tier? Does it motivate them? Do they know what improves it?</li>
-        </ul>
     </div>
 </section>
 
