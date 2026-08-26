@@ -41,7 +41,7 @@ Intracity (within-city) delivery service. Two sides:
 | Age | 25–50 years |
 | Tech literacy | Varies — younger = good, older = basic but functional |
 | Devices | Mid-range Android phones (Indian market) |
-| Fleet size | ~79,000 registered; ~29,000 weekly active; ~35,000–38,000 daily active |
+| Fleet size | ~79,000 registered; ~35,000–38,000 daily active |
 | Cities | 6 cities (Bangalore, Delhi, Mumbai, Ahmedabad, Jaipur + 1 more) |
 
 **Driver tiers:**
@@ -79,7 +79,7 @@ Intracity (within-city) delivery service. Two sides:
 | Orders (5-week) | 647,900 |
 | Delivered | 383,467 (59.2%) |
 
-**Key insight:** Fleet tripled (8K→29K) but fulfillment barely moved. The problem is behavior/engagement, not supply.
+**Key insight:** Adding more drivers hasn't improved fulfillment proportionally. The problem is behavior/engagement, not supply.
 
 **P80 = 80th percentile** (typical worst case benchmark).
 
