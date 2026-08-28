@@ -766,6 +766,315 @@
     </div>
 </details>
 
+<!-- ==================== INTERVIEW #4 ==================== -->
+<details class="interview-accordion">
+    <summary>
+        <span class="chevron">▶</span>
+        <div class="info">
+            <h3>Loknath M M</h3>
+            <p>3W economics, Trip Radar surge loophole, loading/unloading monetization, support breakdown, vehicle road restrictions</p>
+        </div>
+        <div class="tags">
+            <span class="meta-tag role">Driver (3W)</span>
+            <span class="meta-tag date">Aug 2026</span>
+        </div>
+    </summary>
+    <div class="interview-content">
+
+        <!-- Driver Profile + Analytics (compact) -->
+        <p class="section-label">Driver Profile & Analytics</p>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 12px;">
+            <div style="background: var(--bg); border-radius: 8px; padding: 14px 16px; font-size: 0.84rem; line-height: 1.8;">
+                <strong style="color: var(--dark);">Vehicle:</strong> 3-Wheeler (KA03AQ0478)<br>
+                <strong style="color: var(--dark);">Tier:</strong> Not a Star partner (no Slots access)<br>
+                <strong style="color: var(--dark);">Tenure:</strong> 5 months (since buying his 3W)<br>
+                <strong style="color: var(--dark);">Area:</strong> Kasturi Nagar, Bangalore (starts ~9:30am, 2km out)<br>
+                <strong style="color: var(--dark);">Earning Goal:</strong> ₹3,000/day (~₹500 goes to fuel)<br>
+                <strong style="color: var(--dark);">Other apps:</strong> Porter (primary), Towner (new, zero-commission)<br>
+                <strong style="color: var(--dark);">Phone:</strong> 6360495545
+            </div>
+            <div style="background: var(--bg); border-radius: 8px; padding: 14px 16px; font-size: 0.84rem; line-height: 1.8; color: var(--gray);">
+                <strong style="color: var(--dark);">Delhivery weekly orders:</strong> ~10 (very low volume)<br>
+                <strong style="color: var(--dark);">Delhivery pace:</strong> ~1 order/hour<br>
+                <strong style="color: var(--dark);">Porter pace:</strong> Back-to-back, non-stop orders<br>
+                <br>
+                <em>Lifetime deliveries, ratings, completion %, cancel %,<br>on-time % and slots data were not captured for this driver.</em>
+            </div>
+        </div>
+
+        <!-- Economics & Order Volume -->
+        <p class="section-label">Economics & Order Volume</p>
+        <table class="findings-table">
+            <tr>
+                <th>Finding</th>
+                <th>Insight</th>
+                <th>Opportunity</th>
+            </tr>
+            <tr>
+                <td>Delhivery gives ~1 order/hour (≈10 orders/week); Porter gives back-to-back, non-stop orders. He stays on Delhivery only for the rare well-priced order.</td>
+                <td class="col-insight">Order volume — not app quality — is the deciding factor. Delhivery is a fallback, not a primary earner, purely because supply is thin.</td>
+                <td class="col-opportunity">Volume is the retention lever for 3W. Without a baseline order flow, feature work won't move engagement.</td>
+            </tr>
+            <tr>
+                <td>Only takes an order if it works out to ~₹30/km. Uses this to decide between Porter and Delhivery per-order.</td>
+                <td class="col-insight">Drivers do live per-km math on every broadcast. A fixed mental floor (₹30/km) gates acceptance regardless of platform.</td>
+                <td class="col-opportunity">Show effective ₹/km on the broadcast card so the driver's own math is done for them — speeds accept decisions.</td>
+            </tr>
+            <tr>
+                <td>Delhivery pays less on long orders, so he only accepts &lt;10km orders here. Longer, better-paid long-hauls go to Porter.</td>
+                <td class="col-insight">Fare structure pushes the profitable long-distance work to competitors. Delhivery gets only the short, low-value tail.</td>
+                <td class="col-opportunity">Review long-distance 3W fare parity — currently structurally uncompetitive beyond ~10km.</td>
+            </tr>
+            <tr>
+                <td>Target ₹3,000/day, ~₹500 to fuel. Expects a return trip on every long order — wants a "Go to Home" feature like Rapido.</td>
+                <td class="col-insight">Dead-km on the return leg is a real cost. Without return orders, long trips are net-negative for a 3W.</td>
+                <td class="col-opportunity">End-of-trip / go-home routing that surfaces return-direction orders. Directly addresses long-haul reluctance.</td>
+            </tr>
+        </table>
+
+        <!-- Trip Radar & Surge Loophole -->
+        <p class="section-label">Trip Radar & Surge Loophole</p>
+        <table class="findings-table">
+            <tr>
+                <th>Finding</th>
+                <th>Insight</th>
+                <th>Opportunity</th>
+            </tr>
+            <tr>
+                <td>Loves the recently launched Trip Radar — finds it genuinely useful. Notes Porter launched a similar "available orders" view.</td>
+                <td class="col-insight">Trip Radar has real pull for this driver — a rare feature he praises unprompted. Validates the concept.</td>
+                <td class="col-opportunity">Trip Radar is a keeper — invest in it. Confirms demand for a browseable, pull-based order view.</td>
+            </tr>
+            <tr>
+                <td><strong>Surge loophole:</strong> Drivers know that a missed broadcast flows to Trip Radar, then gets surge added over time. So they deliberately ignore long-distance broadcasts and wait for the surge to climb before accepting. He says all his friends do this.</td>
+                <td class="col-insight">The escalation logic is being gamed at scale. Predictable surge-over-time trains drivers to reject first and harvest surge later — inflating payout and hurting acceptance/fulfillment metrics.</td>
+                <td class="col-opportunity">Make surge escalation non-deterministic or cap the wait-to-surge pattern. Reward early acceptance instead of penalizing it. Investigate how widespread the behavior is.</td>
+            </tr>
+        </table>
+
+        <!-- Loading / Unloading Monetization -->
+        <p class="section-label">Loading / Unloading Monetization</p>
+        <table class="findings-table">
+            <tr>
+                <th>Finding</th>
+                <th>Insight</th>
+                <th>Opportunity</th>
+            </tr>
+            <tr>
+                <td>Loading/unloading takes a lot of time; the driver wants to reduce that waiting and, critically, wants visibility into how much he waited and how much he earned for that wait time.</td>
+                <td class="col-insight">Wait time at load/unload is a hidden, unpaid tax for 3W drivers. No visibility = feels like pure loss.</td>
+                <td class="col-opportunity">Show load/unload wait time and its associated earning in the trip/earning breakdown.</td>
+            </tr>
+            <tr>
+                <td>Porter pays for extra waiting time and shows the full breakdown in earning details. This is a key reason he tolerates Porter despite lower per-order pay.</td>
+                <td class="col-insight">Transparency + wait pay together beat raw fare. Porter wins loyalty by showing the driver every rupee's origin.</td>
+                <td class="col-opportunity">Match Porter's earning-detail transparency: itemize base, distance, wait, surge, and labour.</td>
+            </tr>
+            <tr>
+                <td><strong>User explicitly wants a loading/unloading (helper/labour) feature in our app.</strong> Porter's consumer app has a toggle: if the customer switches it on, the driver earns more for helping. In Porter's broadcast it shows a "Loading &amp; Unloading" tag; drivers prefer these orders because they pay more. In Porter's driver live-trip it shows as a "Labour" tag.</td>
+                <td class="col-insight">A concrete, proven earning feature we lack. It converts an unavoidable chore into paid work and makes high-value orders visually identifiable at broadcast.</td>
+                <td class="col-opportunity">Build a consumer-side helper toggle + driver-side "Labour"/"Loading &amp; Unloading" tag on broadcast and live trip, with the extra pay reflected in earnings.</td>
+            </tr>
+            <tr>
+                <td>Porter UX gap he noticed: whatever the customer specifies (floor info, from-which-floor-to-which-floor, other load details) is NOT shown to the driver.</td>
+                <td class="col-insight">Even the benchmark leaves the driver blind to job scope. If we build labour, showing these details is an easy differentiator.</td>
+                <td class="col-opportunity">When building labour, surface the customer's floor/scope details to the driver so effort is known upfront.</td>
+            </tr>
+            <tr>
+                <td>If the driver declines to help load/unload, the customer says "I'll cancel, you go" — and we give no goodwill/cancellation charge for these. Pure loss for the driver.</td>
+                <td class="col-insight">Without a paid labour option, the driver is coerced into free work or eats an uncompensated cancellation. Lose-lose.</td>
+                <td class="col-opportunity">A paid labour toggle removes the coercion; until then, apply goodwill charges to load/unload-refusal cancellations.</td>
+            </tr>
+        </table>
+
+        <!-- Pricing, Commission & Competitors -->
+        <p class="section-label">Pricing, Commission & Competitors</p>
+        <table class="findings-table">
+            <tr>
+                <th>Finding</th>
+                <th>Insight</th>
+                <th>Opportunity</th>
+            </tr>
+            <tr>
+                <td>Porter charges 15% commission — driver feels it's too much. A new app, "Towner," has zero commission, pays the correct amount, and works on meter mode.</td>
+                <td class="col-insight">A zero-commission, meter-based competitor is entering the market. Commission is now a live comparison axis for 3W drivers.</td>
+                <td class="col-opportunity">Watch Towner. Consider commission transparency and whether a meter-mode/low-commission option is viable for 3W.</td>
+            </tr>
+            <tr>
+                <td>Wants the app to follow the government-decided minimum per-hour amount.</td>
+                <td class="col-insight">Drivers are anchoring to a regulatory floor, not just market rates. A compliance-framed pay floor carries moral weight.</td>
+                <td class="col-opportunity">Evaluate aligning 3W pay to the govt minimum-per-hour benchmark; useful trust/PR signal.</td>
+            </tr>
+            <tr>
+                <td>Porter has captured most customers through strong promotion, so customers are more aware of Porter and place more orders there. Driver wants Delhivery to promote more to customers.</td>
+                <td class="col-insight">The volume gap the driver feels traces back to consumer-side demand generation, not driver-side features.</td>
+                <td class="col-opportunity">Consumer-demand marketing is the upstream fix for the 3W order-volume complaint.</td>
+            </tr>
+        </table>
+
+        <!-- Incentives -->
+        <p class="section-label">Incentives</p>
+        <table class="findings-table">
+            <tr>
+                <th>Finding</th>
+                <th>Insight</th>
+                <th>Opportunity</th>
+            </tr>
+            <tr>
+                <td>Recently launched incentives feel very low — he and none of his friends care about them, because incentives are order-count based and Delhivery doesn't give enough orders to ever hit them.</td>
+                <td class="col-insight">Order-count incentives are structurally unreachable when supply is thin. They signal effort without being achievable — so they're ignored entirely.</td>
+                <td class="col-opportunity">Re-base incentives on achievable targets given real 3W order volume, or shift to per-trip/quality-based rewards instead of volume tiers.</td>
+            </tr>
+        </table>
+
+        <!-- Support Experience -->
+        <p class="section-label">Support Experience</p>
+        <table class="findings-table">
+            <tr>
+                <th>Finding</th>
+                <th>Insight</th>
+                <th>Opportunity</th>
+            </tr>
+            <tr>
+                <td>Wants to update his own bank details in the app, but there's no self-serve option to edit the bank field — so he had to call support.</td>
+                <td class="col-insight">A basic self-serve gap forces a support call for something the driver could do himself in seconds.</td>
+                <td class="col-opportunity">Add self-serve bank-detail editing (with verification) in the app.</td>
+            </tr>
+            <tr>
+                <td>Waited 10+ min to connect to support. Language mismatch: driver speaks Kannada, support speaks Hindi; when support hears a language they don't know, they cut the call. Then asked him to email — without even saying the email ID properly.</td>
+                <td class="col-insight">Support is failing on wait time AND language routing. Cutting calls over language is a trust-destroying experience for regional drivers.</td>
+                <td class="col-opportunity">Language-based support routing (Kannada line). Reduce wait time. Never drop calls over language — transfer instead.</td>
+            </tr>
+            <tr>
+                <td>Emailed support on Aug 20 — no response. Eventually found the ops team and physically came to the office to change his bank details.</td>
+                <td class="col-insight">Every support channel failed (call, email), forcing an in-person office visit for a trivial change. Complete channel breakdown.</td>
+                <td class="col-opportunity">Close the loop on emails with SLAs; the self-serve fix above eliminates this journey entirely.</td>
+            </tr>
+        </table>
+
+        <!-- Vehicle Road Restrictions -->
+        <p class="section-label">Vehicle Road Restrictions</p>
+        <table class="findings-table">
+            <tr>
+                <th>Finding</th>
+                <th>Insight</th>
+                <th>Opportunity</th>
+            </tr>
+            <tr>
+                <td>Some areas/roads don't allow 3W (e.g., Brigade Road, Bangalore), but the app doesn't show this. The rider calls the customer to explain, the customer doesn't accept the reason and cancels — and it counts as a driver cancellation.</td>
+                <td class="col-insight">The app ignores real-world vehicle road restrictions, then penalizes the driver for the resulting cancellation. Same unfair-attribution theme, 3W flavour.</td>
+                <td class="col-opportunity">Encode vehicle-type road restrictions; warn/route around them at assignment; don't attribute the resulting cancellation to the driver.</td>
+            </tr>
+            <tr>
+                <td>Wants routes customised to real-world conditions for his vehicle type — not always what Google shows (e.g., offer an alternate route around a 3W-restricted zone).</td>
+                <td class="col-insight">Generic navigation doesn't respect vehicle-class constraints. Drivers want vehicle-aware routing.</td>
+                <td class="col-opportunity">Vehicle-type-aware routing that avoids restricted roads and shows the customer a valid alternate route.</td>
+            </tr>
+            <tr>
+                <td>Won't accept orders outside the city — traffic plus no return order makes them unviable. Delhivery gives more orders in Chikpete, but he avoids it (too narrow to drive a 3W).</td>
+                <td class="col-insight">Demand exists where the 3W physically can't operate comfortably. Order density and vehicle suitability are mismatched.</td>
+                <td class="col-opportunity">Factor vehicle suitability (road width, restrictions) into where 3W orders are surfaced.</td>
+            </tr>
+        </table>
+
+        <!-- Broadcast & Distance Accuracy -->
+        <p class="section-label">Broadcast & Distance Accuracy</p>
+        <table class="findings-table">
+            <tr>
+                <th>Finding</th>
+                <th>Insight</th>
+                <th>Opportunity</th>
+            </tr>
+            <tr>
+                <td>Broadcast km are wrong — distance seems calculated for a bike, not a car/3W-viable route. Sometimes off by 3–4km, a loss of ~₹90 per order.</td>
+                <td class="col-insight">Straight-line / bike-route distance confirmed again, now with a 3W-specific cost (₹90/order). Same root issue, quantified.</td>
+                <td class="col-opportunity">Compute broadcast distance on the vehicle-appropriate route (3W/car), not bike/straight-line.</td>
+            </tr>
+            <tr>
+                <td>On accepting, he calculates ₹/km; if too low he calls the customer to negotiate a higher price. If they refuse, he cancels.</td>
+                <td class="col-insight">Underpricing pushes drivers into off-platform price negotiation and cancellations — a fare-structure symptom.</td>
+                <td class="col-opportunity">Fix per-km fairness so drivers don't need to renegotiate; surface ₹/km upfront to reduce post-accept regret.</td>
+            </tr>
+        </table>
+
+        <!-- During Delivery & App Reliability -->
+        <p class="section-label">During Delivery & App Reliability</p>
+        <table class="findings-table">
+            <tr>
+                <th>Finding</th>
+                <th>Insight</th>
+                <th>Opportunity</th>
+            </tr>
+            <tr>
+                <td><strong>Needs an emergency / SOS feature in the app — says drivers really need this.</strong></td>
+                <td class="col-insight">A safety gap. No in-app way to raise an emergency during a trip. High-severity, previously unraised need.</td>
+                <td class="col-opportunity">Add an in-app SOS/emergency button with escalation to support/authorities.</td>
+            </tr>
+            <tr>
+                <td>Pickup distance shown vs distance actually travelled differ.</td>
+                <td class="col-insight">Distance mismatch confirmed a 4th time, at pickup — systemic across the fleet.</td>
+                <td class="col-opportunity">Route-based, vehicle-aware distance everywhere it's shown.</td>
+            </tr>
+            <tr>
+                <td>Customers sometimes book a 3W instead of a Tata Ace to save money (Tata Ace is priced higher). This causes the usual fight between customer and driver at pickup.</td>
+                <td class="col-insight">Price arbitrage across vehicle types creates capacity mismatches and pickup conflicts — a booking-side loophole.</td>
+                <td class="col-opportunity">Guardrails on vehicle selection vs load size; verify at booking to prevent 3W-vs-Ace mismatches.</td>
+            </tr>
+            <tr>
+                <td>When wait time is paid, he can't see it in the wallet or when it was added — no breakdown/visibility. Also hits occasional wallet withdrawal errors.</td>
+                <td class="col-insight">Even when we pay for wait, the lack of visibility means the driver doesn't trust or notice it. Payment without transparency has little retention value.</td>
+                <td class="col-opportunity">Itemize wait-time credits in the wallet with timestamps; fix withdrawal errors.</td>
+            </tr>
+            <tr>
+                <td>App goes offline and exits automatically; driver gets logged out and must log in again. Happening for the last 2–3 months.</td>
+                <td class="col-insight">A persistent stability/session bug directly costs order time — driver is offline without knowing.</td>
+                <td class="col-opportunity">Investigate auto-logout / crash; add session persistence and a re-login prompt without full logout.</td>
+            </tr>
+            <tr>
+                <td>Trip-ending issue: on ending a trip the app just shows a loading screen (stuck).</td>
+                <td class="col-insight">Core state transition (trip completion) hangs — same family as the swipe/marking failures other drivers report.</td>
+                <td class="col-opportunity">Fix trip-end completion hang; add retry/fallback and confirm state sync.</td>
+            </tr>
+        </table>
+
+        <!-- Top Support Issues -->
+        <p class="section-label">Top Support Issues (Self-Reported)</p>
+        <table class="findings-table">
+            <tr>
+                <th>Issue</th>
+                <th>Root Cause</th>
+                <th>Opportunity</th>
+            </tr>
+            <tr>
+                <td>1. Too few orders on Delhivery (~1/hr vs Porter non-stop)</td>
+                <td class="col-insight">Thin 3W supply + weaker consumer awareness. Delhivery is a fallback, not a primary earner.</td>
+                <td class="col-opportunity">Grow consumer demand for 3W; without volume, nothing else retains the driver.</td>
+            </tr>
+            <tr>
+                <td>2. No paid loading/unloading (labour) option</td>
+                <td class="col-insight">Unavoidable load/unload work is unpaid and invisible; refusing risks an uncompensated cancellation. Porter monetizes it.</td>
+                <td class="col-opportunity">Build consumer helper toggle + driver Labour tag with pay in earnings breakdown.</td>
+            </tr>
+            <tr>
+                <td>3. Support unreachable + language mismatch + no self-serve bank edit</td>
+                <td class="col-insight">Long waits, calls cut over Kannada/Hindi mismatch, unanswered email — forced an office visit for a trivial change.</td>
+                <td class="col-opportunity">Kannada routing, faster SLAs, and self-serve bank-detail editing.</td>
+            </tr>
+            <tr>
+                <td>4. 3W road restrictions not shown → unfair cancellations</td>
+                <td class="col-insight">App ignores where a 3W legally can't go; the resulting customer cancellation is blamed on the driver.</td>
+                <td class="col-opportunity">Encode vehicle restrictions, route around them, and don't attribute the cancellation to the driver.</td>
+            </tr>
+            <tr>
+                <td>5. App stability — auto-logout &amp; stuck trip-end screen</td>
+                <td class="col-insight">Session drops and a hanging trip-completion loader cost order time and mirror the fleet-wide state-transition bugs.</td>
+                <td class="col-opportunity">Fix auto-logout/crash and trip-end hang; add session persistence and retry.</td>
+            </tr>
+        </table>
+
+    </div>
+</details>
+
 <!-- Future interviews go here as new <details class="interview-accordion"> blocks -->
 
 </div><!-- /.interview-list -->
@@ -781,30 +1090,30 @@
                 <div class="group-label">▲ Top 3 Issues</div>
                 <div class="pattern-item">
                     <span class="rank">1</span>
-                    <span class="pt-text"><strong>Swipe / status marking fails</strong>Core action broken — all 3 sources confirm. Drivers call ops to force-mark.</span>
+                    <span class="pt-text"><strong>Broken core app actions</strong>Swipe/marking fails, trip-end hangs, auto-logout — drivers call ops to force-mark.</span>
                 </div>
                 <div class="pattern-item">
                     <span class="rank">2</span>
-                    <span class="pt-text"><strong>Distance shown ≠ actual</strong>Straight-line vs road distance gap drives rejections &amp; cancellations.</span>
+                    <span class="pt-text"><strong>Distance shown ≠ actual</strong>Bike/straight-line distance gap drives rejections &amp; costs 3W ~₹90/order.</span>
                 </div>
                 <div class="pattern-item">
                     <span class="rank">3</span>
-                    <span class="pt-text"><strong>Unfair cancellation attribution</strong>System/customer cancels blamed on driver, hurting MBG &amp; trust.</span>
+                    <span class="pt-text"><strong>Unpaid work &amp; low volume</strong>Unpaid wait/load, thin order flow — drivers drift to Porter for pay &amp; volume.</span>
                 </div>
             </div>
             <div class="patterns-group good">
                 <div class="group-label">● Top 3 Working Well</div>
                 <div class="pattern-item">
                     <span class="rank">1</span>
-                    <span class="pt-text"><strong>Slots are the retention hook</strong>Drivers earn more &amp; stay loyal for guaranteed income.</span>
+                    <span class="pt-text"><strong>Slots are the retention hook</strong>2W drivers earn more &amp; stay loyal for guaranteed income.</span>
                 </div>
                 <div class="pattern-item">
                     <span class="rank">2</span>
-                    <span class="pt-text"><strong>Cancellation compensation</strong>Recent change pays drivers when customers cancel after arrival.</span>
+                    <span class="pt-text"><strong>Trip Radar has real pull</strong>Praised unprompted by 3W driver — a browseable, pull-based order view drivers want.</span>
                 </div>
                 <div class="pattern-item">
                     <span class="rank">3</span>
-                    <span class="pt-text"><strong>Earnings clarity &amp; on-time</strong>Earnings understood once learned; engaged drivers hit 98–100% on-time.</span>
+                    <span class="pt-text"><strong>Cancellation compensation</strong>Recent change pays drivers when customers cancel after arrival.</span>
                 </div>
             </div>
         </div>
@@ -834,24 +1143,39 @@
                 <h3>Common Issues</h3>
 
                 <div class="pattern-card issue">
-                    <h4>1. Swipe / status marking is broken</h4>
-                    <p>"Swipe to mark arrived/delivered" and "swipe to start trip" frequently fail to register or don't sync. Every failure sends the driver to ops to force-mark. The app is failing at its most basic job, and ops has become the manual override.</p>
-                    <p class="evidence">Confirmed by all 3 sources — most systemic bug found.</p>
+                    <h4>1. Broken core app actions</h4>
+                    <p>"Swipe to mark arrived/delivered" and "swipe to start trip" frequently fail to register or don't sync; trip-end hangs on a loading screen; the app auto-logs-out mid-shift. Every failure sends the driver to ops to force-mark. The app is failing at its most basic job, and ops has become the manual override.</p>
+                    <p class="evidence">Confirmed by all 4 sources — most systemic bug family found.</p>
                 </div>
                 <div class="pattern-card issue">
                     <h4>2. Distance shown ≠ actual distance</h4>
-                    <p>Broadcast shows straight-line distance; real road distance is much higher. Drivers commit on wrong info, regret it, and reject future broadcasts — feeding low acceptance (~5%) and 21% post-assignment cancellation.</p>
-                    <p class="evidence">Both drivers cite this independently.</p>
+                    <p>Broadcast shows bike/straight-line distance; real road distance is much higher. Drivers commit on wrong info, regret it, and reject future broadcasts — feeding low acceptance (~5%) and 21% post-assignment cancellation. For the 3W driver this is off by 3–4km, a ~₹90 loss per order.</p>
+                    <p class="evidence">Cited independently by 3 drivers; now quantified.</p>
                 </div>
                 <div class="pattern-card issue">
                     <h4>3. Unfair cancellation attribution</h4>
-                    <p>Double orders auto-cancel and get blamed on the driver; customer cancels count against them; going offline still assigns an order that forces a cancel. Drivers can't even see who caused a cancellation. Directly affects MBG eligibility.</p>
-                    <p class="evidence">Raised by both drivers; erodes trust.</p>
+                    <p>Double orders auto-cancel and get blamed on the driver; customer cancels count against them; going offline still assigns an order that forces a cancel; 3W road restrictions (e.g., Brigade Road) aren't shown so the customer cancels and it lands on the driver. Drivers can't even see who caused a cancellation. Directly affects MBG eligibility.</p>
+                    <p class="evidence">Raised by all 3 drivers; erodes trust.</p>
                 </div>
                 <div class="pattern-card issue">
                     <h4>4. Unpaid cost absorption</h4>
-                    <p>Drivers absorb unpaid pickup travel (slots count only drop km), unpaid wait time at merchant (5–20 min), and unpaid extra distance from wrong addresses. Porter is the benchmark — it pays for extra movement over 1km.</p>
-                    <p class="evidence">Repeated across driver interviews.</p>
+                    <p>Drivers absorb unpaid pickup travel (slots count only drop km), unpaid wait time at merchant (5–20 min), unpaid load/unload effort, and unpaid extra distance from wrong addresses. Even when wait time is paid, there's no wallet visibility of when/how much. Porter is the benchmark — it pays for extra movement over 1km and itemizes everything.</p>
+                    <p class="evidence">Repeated across all driver interviews.</p>
+                </div>
+                <div class="pattern-card issue">
+                    <h4>9. No paid loading/unloading (labour) option</h4>
+                    <p>Load/unload is unavoidable, time-consuming, and unpaid. If the driver refuses, the customer cancels ("I'll cancel, you go") with no goodwill charge. Porter monetizes this: a consumer toggle raises the driver's pay, a "Loading &amp; Unloading" tag flags high-value orders in broadcast, and it shows as "Labour" in the live trip. The 3W driver explicitly asked for this feature in our app.</p>
+                    <p class="evidence">Interview #4 (Loknath) — a concrete, proven feature we lack.</p>
+                </div>
+                <div class="pattern-card issue">
+                    <h4>10. Trip Radar surge is being gamed</h4>
+                    <p>Drivers know a missed broadcast flows to Trip Radar and gains surge over time, so they deliberately reject long-distance orders and wait for the surge to climb before accepting. The driver says all his friends do this — deterministic escalation is training reject-first behavior at scale.</p>
+                    <p class="evidence">Interview #4 (Loknath) — inflates payout, hurts fulfillment.</p>
+                </div>
+                <div class="pattern-card issue">
+                    <h4>11. Low 3W order volume &amp; support breakdown</h4>
+                    <p>Delhivery gives a 3W driver ~1 order/hour vs Porter's non-stop flow, so it's only a fallback. Support compounded it: 10+ min waits, calls cut over a Kannada/Hindi mismatch, an unanswered email, and no self-serve bank-detail edit — forcing an in-person office visit for a trivial change. A missing SOS/emergency feature was also flagged.</p>
+                    <p class="evidence">Interview #4 (Loknath) — volume, support &amp; safety gaps.</p>
                 </div>
                 <div class="pattern-card issue">
                     <h4>5. Address / location accuracy</h4>
@@ -880,8 +1204,12 @@
                 <h3>What's Working</h3>
 
                 <div class="pattern-card positive">
-                    <h4>Slots are the retention hook</h4>
-                    <p>Both drivers value slots; M Gowda earns more from Delhivery specifically because of them. A genuine competitive advantage — when it works.</p>
+                    <h4>Slots are the retention hook (2W)</h4>
+                    <p>Both 2W drivers value slots; M Gowda earns more from Delhivery specifically because of them. A genuine competitive advantage — when it works. Note: non-Star and 3W drivers have no access.</p>
+                </div>
+                <div class="pattern-card positive">
+                    <h4>Trip Radar has real pull</h4>
+                    <p>The 3W driver praised Trip Radar unprompted as genuinely useful (Porter has since copied it with an "available orders" view). Validates demand for a browseable, pull-based order list — worth investing in, and worth protecting from the surge-gaming loophole above.</p>
                 </div>
                 <div class="pattern-card positive">
                     <h4>Recent cancellation-compensation change</h4>
@@ -903,6 +1231,12 @@
                 <div class="tension-card">
                     <p><strong>Vehicle sub-typing contradicts between drivers.</strong> M Gowda wants a scooty vs bike distinction (oversized packages keep landing on his bike). Murugan argues against it — consumers prefer scooty, so bike-only drivers would lose orders. This is a design decision needing demand-balancing, not a clear win.</p>
                 </div>
+                <div class="tension-card" style="margin-top: 12px;">
+                    <p><strong>Trip Radar is loved and gamed at the same time.</strong> Loknath praises Trip Radar as one of the few genuinely useful features — yet the same mechanism drives the surge loophole (reject long orders, wait for surge to climb, then accept). Investing in Trip Radar and fixing deterministic surge escalation have to be designed together, or improving one worsens the other.</p>
+                </div>
+                <div class="tension-card" style="margin-top: 12px;">
+                    <p><strong>Segment split: 2W-Star vs 3W-non-Star.</strong> The retention story diverges by segment. 2W Star drivers stay for Slots; the 3W non-Star driver has no Slots access, gets ~1 order/hour, and stays only for occasional well-priced orders. Solutions tuned for the 2W-Star majority (Slots) don't reach the 3W/non-Star segment at all.</p>
+                </div>
             </div>
 
             <!-- PM Lens Mapping -->
@@ -912,10 +1246,14 @@
                     <div class="lens-item">
                         <h5>App-solvable</h5>
                         <ul>
-                            <li>Swipe reliability + fallback tap</li>
-                            <li>Route-based distance in broadcast</li>
+                            <li>Swipe reliability + fallback tap; fix trip-end hang &amp; auto-logout</li>
+                            <li>Route-based, vehicle-aware distance in broadcast</li>
                             <li>In-app surge / demand zones</li>
                             <li>Cancellation reason &amp; attribution visibility</li>
+                            <li>Effective ₹/km on broadcast card</li>
+                            <li>SOS / emergency button</li>
+                            <li>Self-serve bank-detail editing</li>
+                            <li>Wallet wait-time itemization</li>
                             <li>In-app onboarding / coachmarks</li>
                         </ul>
                     </div>
@@ -923,6 +1261,7 @@
                         <h5>Ops-solvable</h5>
                         <ul>
                             <li>Support inequity &amp; reachability</li>
+                            <li>Language-based routing (Kannada) + email SLAs</li>
                             <li>Merchant readiness signals</li>
                             <li>Oversized-package handling</li>
                         </ul>
@@ -931,18 +1270,22 @@
                         <h5>Economics-solvable</h5>
                         <ul>
                             <li>Porter fare parity (esp. long distance)</li>
-                            <li>Pickup-km pay</li>
-                            <li>Wait-time compensation</li>
+                            <li>Paid loading/unloading (labour) feature</li>
+                            <li>Pickup-km &amp; wait-time compensation</li>
                             <li>Extra-distance compensation</li>
+                            <li>Achievable (non-volume) incentives; commission/meter-mode watch (Towner)</li>
+                            <li>Govt minimum-per-hour benchmark</li>
                         </ul>
                     </div>
                     <div class="lens-item">
                         <h5>System-solvable</h5>
                         <ul>
-                            <li>Cancellation attribution logic</li>
+                            <li>Cancellation attribution logic (incl. 3W road restrictions)</li>
+                            <li>Non-deterministic surge to close the Trip Radar loophole</li>
+                            <li>Vehicle-type road restrictions &amp; vehicle-aware routing</li>
                             <li>No assignment during logout transition</li>
-                            <li>Package-to-vehicle matching</li>
-                            <li>History-based driver assignment</li>
+                            <li>Package-to-vehicle matching (3W vs Tata Ace)</li>
+                            <li>History-based driver assignment; return-trip / go-home routing</li>
                         </ul>
                     </div>
                 </div>
@@ -951,7 +1294,7 @@
             <div class="modal-section">
                 <h3>The Throughline</h3>
                 <div class="pattern-card">
-                    <p>The app breaks at core moments (swipe, distance, attribution) and drivers route around it via ops calls and personal experience. Fixing the reliability and fairness basics likely moves acceptance and cancellation more than any new feature.</p>
+                    <p>The app breaks at core moments (swipe, distance, attribution, trip-end) and drivers route around it via ops calls and personal experience. Underneath sits an economics story: Porter and now zero-commission Towner win on volume, wait/labour pay, and transparency — so drivers treat Delhivery as a fallback and even game the Trip Radar surge to extract fair pay. Fixing the reliability and fairness basics — and giving 3W/non-Star drivers volume and a paid labour option — likely moves acceptance and cancellation more than any new feature.</p>
                 </div>
             </div>
 
