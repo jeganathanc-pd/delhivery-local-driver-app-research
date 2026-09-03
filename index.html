@@ -44,11 +44,15 @@
             color: var(--gray);
         }
         .cards {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
             gap: 24px;
             max-width: 900px;
             width: 100%;
+        }
+        .cards .card {
+            flex: 0 1 260px;
         }
         .card {
             background: var(--white);
@@ -126,12 +130,15 @@
         <p>Goal, context, field research methods, timeline, synthesis framework, and action checklist.</p>
         <span class="arrow">→</span>
     </a>
+    <!-- HIDDEN FOR PRESENTATION — restore by uncommenting this card
     <a href="data-findings.html" class="card card-data">
         <span class="badge badge-red">Analytics</span>
         <h2>Findings from Data</h2>
         <p>41 insights across 6 categories — business metrics, network health, cancellations, partner performance.</p>
         <span class="arrow">→</span>
     </a>
+    -->
+
     <a href="interviews.html" class="card card-interviews">
         <span class="badge badge-green">Qualitative</span>
         <h2>Interviews</h2>
