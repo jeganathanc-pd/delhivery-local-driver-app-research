@@ -1112,6 +1112,12 @@
                     <span class="pt-text"><strong>Trip Radar has real pull</strong>Drivers like Trip Radar because it gives them the flexibility to choose trips themselves.</span>
                 </div>
             </div>
+            <div class="patterns-group requested">
+                <div class="group-label" style="color: var(--medium);">★ Top Requested Features</div>
+                <div class="pattern-item"><span class="rank" style="background: var(--medium);">1</span><span class="pt-text">Pay for loading &amp; unloading</span></div>
+                <div class="pattern-item"><span class="rank" style="background: var(--medium);">2</span><span class="pt-text">Show where the orders are (demand map)</span></div>
+                <div class="pattern-item"><span class="rank" style="background: var(--medium);">3</span><span class="pt-text">Good help and support</span></div>
+            </div>
         </div>
         <div class="box-footer">
             <button class="view-all-btn" onclick="openPatternsModal()">View all patterns &amp; details →</button>
@@ -1139,59 +1145,59 @@
                 <h3>Common Issues</h3>
 
                 <div class="pattern-card issue">
-                    <h4>1. Broken core app actions</h4>
-                    <p>"Swipe to mark arrived/delivered" and "swipe to start trip" frequently fail to register or don't sync; trip-end hangs on a loading screen; the app auto-logs-out mid-shift. Every failure sends the driver to ops to force-mark. The app is failing at its most basic job, and ops has become the manual override.</p>
-                    <p class="evidence">Confirmed by all 4 sources — most systemic bug family found.</p>
+                    <h4>1. Core app actions break</h4>
+                    <p>The swipes drivers use every trip — swipe to start, swipe to mark arrived, swipe to mark delivered — often don't register or don't save. The app freezes on a loading screen at the end of a trip, and sometimes logs the driver out in the middle of a shift. Every time this happens, the driver has to call the ops team to close the trip for them. The app is failing at its most basic job, and the ops team has become the manual backup.</p>
+                    <p class="evidence">Came up in all 4 interviews — the most widespread problem we found.</p>
                 </div>
                 <div class="pattern-card issue">
-                    <h4>2. Distance shown ≠ actual distance</h4>
-                    <p>Broadcast shows bike/straight-line distance; real road distance is much higher. Drivers commit on wrong info, regret it, and reject future broadcasts — feeding low acceptance (~5%) and 21% post-assignment cancellation. For the 3W driver this is off by 3–4km, a ~₹90 loss per order.</p>
-                    <p class="evidence">Cited independently by 3 drivers; now quantified.</p>
+                    <h4>2. The distance shown is not the real distance</h4>
+                    <p>When an order comes in, the app shows a short straight-line distance, but the actual road distance is much longer. Drivers accept based on the wrong number, feel cheated, and start ignoring future orders. For a 3-wheeler driver the gap is 3–4 km, which works out to roughly ₹90 lost on every order.</p>
+                    <p class="evidence">Raised separately by 3 drivers, and now we have the numbers.</p>
                 </div>
                 <div class="pattern-card issue">
-                    <h4>3. Unfair cancellation attribution</h4>
-                    <p>Double orders auto-cancel and get blamed on the driver; customer cancels count against them; going offline still assigns an order that forces a cancel; 3W road restrictions (e.g., Brigade Road) aren't shown so the customer cancels and it lands on the driver. Drivers can't even see who caused a cancellation. Directly affects MBG eligibility.</p>
-                    <p class="evidence">Raised by all 3 drivers; erodes trust.</p>
+                    <h4>3. Drivers get blamed for cancellations that aren't theirs</h4>
+                    <p>When a driver is given two orders at once, one auto-cancels and the driver is blamed. If the customer cancels, it still counts against the driver. Even going offline can push an order to them that they're then forced to cancel. And some roads are closed to 3-wheelers (like Brigade Road), but the app doesn't warn them, so the customer cancels and the driver takes the hit. On top of all this, drivers can't even see who actually caused a cancellation. These marks decide whether a driver qualifies for guaranteed-income slots, so it directly affects their earnings.</p>
+                    <p class="evidence">Raised by all 3 drivers — a major trust issue.</p>
                 </div>
                 <div class="pattern-card issue">
-                    <h4>4. Unpaid cost absorption</h4>
-                    <p>Drivers absorb unpaid pickup travel (slots count only drop km), unpaid wait time at merchant (5–20 min), unpaid load/unload effort, and unpaid extra distance from wrong addresses. Even when wait time is paid, there's no wallet visibility of when/how much. Porter is the benchmark — it pays for extra movement over 1km and itemizes everything.</p>
-                    <p class="evidence">Repeated across all driver interviews.</p>
+                    <h4>4. Drivers pay for costs the company should cover</h4>
+                    <p>Drivers cover a lot of unpaid work: the distance travelled to reach a pickup (slots only pay for the drop distance), 5–20 minutes waiting at the shop, the effort of loading and unloading, and extra distance caused by wrong addresses. Even when waiting time is paid, the app doesn't show when or how much. Porter sets the bar here — it pays for any extra travel over 1 km and shows a clear breakdown of everything.</p>
+                    <p class="evidence">Came up in every driver interview.</p>
                 </div>
                 <div class="pattern-card issue">
-                    <h4>9. No paid loading/unloading (labour) option</h4>
-                    <p>Load/unload is unavoidable, time-consuming, and unpaid. If the driver refuses, the customer cancels ("I'll cancel, you go") with no goodwill charge. Porter monetizes this: a consumer toggle raises the driver's pay, a "Loading &amp; Unloading" tag flags high-value orders in broadcast, and it shows as "Labour" in the live trip. The 3W driver explicitly asked for this feature in our app.</p>
-                    <p class="evidence">Interview #4 (Loknath) — a concrete, proven feature we lack.</p>
+                    <h4>9. No option to get paid for loading and unloading</h4>
+                    <p>Loading and unloading is unavoidable, takes time, and pays nothing. If a driver refuses to do it, the customer just cancels ("I'll cancel, you go") and the driver gets nothing. Porter turns this into paid work: the customer can add a loading charge that goes to the driver, high-effort orders are tagged so drivers can see them upfront, and it shows clearly during the trip. One 3-wheeler driver specifically asked us to build this.</p>
+                    <p class="evidence">From Loknath's interview — a proven feature we're missing.</p>
                 </div>
                 <div class="pattern-card issue">
-                    <h4>10. Trip Radar surge is being gamed</h4>
-                    <p>Drivers know a missed broadcast flows to Trip Radar and gains surge over time, so they deliberately reject long-distance orders and wait for the surge to climb before accepting. The driver says all his friends do this — deterministic escalation is training reject-first behavior at scale.</p>
-                    <p class="evidence">Interview #4 (Loknath) — inflates payout, hurts fulfillment.</p>
+                    <h4>10. Drivers are gaming the Trip Radar surge</h4>
+                    <p>Drivers have learned that if they ignore an order, it moves to Trip Radar and the price slowly goes up. So they deliberately skip long-distance orders and wait for the price to climb before accepting. One driver said all his friends do this. Because the price increase is predictable, the system is quietly teaching drivers to reject orders first.</p>
+                    <p class="evidence">From Loknath's interview — inflates payouts and hurts fulfillment.</p>
                 </div>
                 <div class="pattern-card issue">
-                    <h4>11. Low 3W order volume &amp; support breakdown</h4>
-                    <p>Delhivery gives a 3W driver ~1 order/hour vs Porter's non-stop flow, so it's only a fallback. Support compounded it: 10+ min waits, calls cut over a Kannada/Hindi mismatch, an unanswered email, and no self-serve bank-detail edit — forcing an in-person office visit for a trivial change. A missing SOS/emergency feature was also flagged.</p>
-                    <p class="evidence">Interview #4 (Loknath) — volume, support &amp; safety gaps.</p>
+                    <h4>11. Too few orders for 3-wheelers, plus weak support</h4>
+                    <p>A 3-wheeler driver gets about 1 order an hour from Delhivery versus a steady stream from Porter, so Delhivery is only a backup for them. Support made it worse: waits over 10 minutes, calls cut short because the agent didn't speak Kannada, an email that was never answered, and no way to update bank details in the app — forcing a trip to the office for a tiny change. There's also no emergency or SOS button.</p>
+                    <p class="evidence">From Loknath's interview — order volume, support, and safety gaps.</p>
                 </div>
                 <div class="pattern-card issue">
-                    <h4>5. Address / location accuracy</h4>
-                    <p>App shows the wrong place; driver travels extra, customer blames them, no compensation. Drivers work around it by calling the customer or relying on landmark/familiarity memory.</p>
-                    <p class="evidence">Both drivers; Porter compensates for this.</p>
+                    <h4>5. Wrong pickup and drop locations</h4>
+                    <p>The app sometimes points to the wrong place, so the driver travels extra, the customer blames them, and no one pays for the wasted distance. Drivers get around it by calling the customer or going off landmarks they remember.</p>
+                    <p class="evidence">Both drivers mentioned it; Porter pays for this extra travel.</p>
                 </div>
                 <div class="pattern-card issue">
-                    <h4>6. No in-app demand visibility</h4>
-                    <p>Drivers manually reposition to high-demand areas using mental maps built from experience (Dunzo, Porter). They explicitly want Rapido-style surge zones in-app. Veterans cope; new drivers have no equivalent.</p>
-                    <p class="evidence">Both drivers; ops confirms PN-based workaround.</p>
+                    <h4>6. No way to see where the demand is</h4>
+                    <p>Drivers move to busy areas on their own, using a mental map built from experience on other apps. They want the app to show busy zones and higher-pay areas, the way Rapido does. Experienced drivers manage; new drivers have nothing to go on.</p>
+                    <p class="evidence">Both drivers; the ops team confirms drivers rely on guesswork.</p>
                 </div>
                 <div class="pattern-card issue">
-                    <h4>7. Support inequity &amp; reachability</h4>
-                    <p>Drivers who know an ops member's number skip the queue; everyone else goes through low-priority Goa CX. Support is hard to reach during live trips — exactly when it costs money.</p>
-                    <p class="evidence">Ops flow (Thanuj) + Murugan's live-trip experience.</p>
+                    <h4>7. Support is easier to reach for some drivers than others</h4>
+                    <p>Drivers who happen to know someone on the ops team can skip the queue; everyone else goes through the slow general support line. And support is hardest to reach during a live trip — exactly when a problem is costing the driver money.</p>
+                    <p class="evidence">Seen in the ops process and in Murugan's live-trip experience.</p>
                 </div>
                 <div class="pattern-card issue">
-                    <h4>8. Onboarding gap</h4>
-                    <p>No in-app onboarding. Drivers figure it out alone, and any confusion becomes a support call. Videos help only ~50–60%; the rest is learned by doing the first few orders.</p>
-                    <p class="evidence">Ops + driver agree on the learn-by-doing window.</p>
+                    <h4>8. New drivers get no guidance</h4>
+                    <p>There's no in-app walkthrough for new drivers. They work it out on their own, and anything confusing turns into a support call. Training videos only help about half of them; the rest learn by doing their first few orders.</p>
+                    <p class="evidence">Both the ops team and drivers agree on this learn-by-doing gap.</p>
                 </div>
             </div>
 
@@ -1200,20 +1206,37 @@
                 <h3>What's Working</h3>
 
                 <div class="pattern-card positive">
-                    <h4>Slots are the retention hook (2W)</h4>
-                    <p>Both 2W drivers value slots; M Gowda earns more from Delhivery specifically because of them. A genuine competitive advantage — when it works. Note: non-Star and 3W drivers have no access.</p>
+                    <h4>Slots keep 2-wheeler drivers loyal</h4>
+                    <p>Both 2-wheeler drivers value the guaranteed-income slots, and one of them (M Gowda) earns more from Delhivery specifically because of them. It's a real advantage over other apps when it works. The catch: lower-tier and 3-wheeler drivers can't access slots at all.</p>
                 </div>
                 <div class="pattern-card positive">
-                    <h4>Trip Radar has real pull</h4>
-                    <p>The 3W driver praised Trip Radar unprompted as genuinely useful (Porter has since copied it with an "available orders" view). Validates demand for a browseable, pull-based order list — worth investing in, and worth protecting from the surge-gaming loophole above.</p>
+                    <h4>Drivers genuinely like Trip Radar</h4>
+                    <p>A 3-wheeler driver brought up Trip Radar on his own as one of the few features he really likes, because it lets him choose trips himself instead of waiting to be offered one. Porter has since copied the idea. It's worth investing in — and worth protecting from the surge-gaming problem noted above.</p>
                 </div>
                 <div class="pattern-card positive">
-                    <h4>Earnings transparency (once learned)</h4>
-                    <p>The earnings page is understandable; the only friction is a one-time "collect from customer" COD wallet confusion that self-resolves within a couple of orders.</p>
+                    <h4>Earnings are clear once drivers learn them</h4>
+                    <p>The earnings page makes sense to drivers. The only early confusion is around cash orders — knowing what to collect from the customer — and that sorts itself out after a couple of orders.</p>
                 </div>
                 <div class="pattern-card positive">
-                    <h4>Strong on-time performance</h4>
-                    <p>Engaged drivers show 98–100% on-time. The fulfillment problem is about engagement/acceptance, not capability — consistent with the analytics.</p>
+                    <h4>Drivers who work deliver on time</h4>
+                    <p>Active drivers hit 98–100% on-time delivery. So the real problem isn't whether drivers can do the job — it's getting them to accept orders in the first place. The interview evidence matches what the data shows.</p>
+                </div>
+            </div>
+
+            <!-- Top requested features -->
+            <div class="modal-section">
+                <h3>Top Requested Features</h3>
+                <div class="pattern-card positive">
+                    <h4>1. Pay for loading and unloading</h4>
+                    <p>Let the customer add a loading charge that goes to the driver, and flag these orders upfront so drivers know the effort involved. Drivers do this work for free today, and Porter already pays for it.</p>
+                </div>
+                <div class="pattern-card positive">
+                    <h4>2. Show where the orders are</h4>
+                    <p>A live map of busy areas and higher-pay zones inside the app, so drivers know where to go instead of guessing. Both drivers asked for something like Rapido's demand map.</p>
+                </div>
+                <div class="pattern-card positive">
+                    <h4>3. Good help and support</h4>
+                    <p>Support that's easy to reach and actually helps — short wait times, agents who speak the driver's language, and quick answers during a live trip. Today drivers wait over 10 minutes, get calls cut short over a language mismatch, and some can only get help if they personally know someone on the team.</p>
                 </div>
             </div>
 
@@ -1221,10 +1244,10 @@
             <div class="modal-section">
                 <h3>A Tension to Flag</h3>
                 <div class="tension-card">
-                    <p><strong>Vehicle sub-typing contradicts between drivers.</strong> M Gowda wants a scooty vs bike distinction (oversized packages keep landing on his bike). Murugan argues against it — consumers prefer scooty, so bike-only drivers would lose orders. This is a design decision needing demand-balancing, not a clear win.</p>
+                    <p><strong>Drivers disagree on splitting scooter and bike orders.</strong> One driver (M Gowda) wants the app to tell scooters and bikes apart, because oversized packages keep landing on his bike. Another (Murugan) is against it — customers prefer scooters, so bike-only drivers would end up with fewer orders. There's no clean win here; it's a trade-off that needs balancing.</p>
                 </div>
                 <div class="tension-card" style="margin-top: 12px;">
-                    <p><strong>Trip Radar is loved and gamed at the same time.</strong> Loknath praises Trip Radar as one of the few genuinely useful features — yet the same mechanism drives the surge loophole (reject long orders, wait for surge to climb, then accept). Investing in Trip Radar and fixing deterministic surge escalation have to be designed together, or improving one worsens the other.</p>
+                    <p><strong>Trip Radar is loved and abused at the same time.</strong> Loknath calls Trip Radar one of the few genuinely useful features — but the same feature is what lets drivers game the surge (skip long orders, wait for the price to rise, then accept). We can't improve one without addressing the other, so they have to be designed together.</p>
                 </div>
             </div>
 
