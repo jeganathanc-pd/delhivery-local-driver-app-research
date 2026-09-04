@@ -1090,30 +1090,26 @@
                 <div class="group-label">▲ Top 3 Issues</div>
                 <div class="pattern-item">
                     <span class="rank">1</span>
-                    <span class="pt-text"><strong>Broken core app actions</strong>Swipe/marking fails, trip-end hangs, auto-logout — drivers call ops to force-mark.</span>
+                    <span class="pt-text"><strong>Broken core app actions</strong>Swipe/marking fails and trip-end hangs — drivers call ops to force-mark.</span>
                 </div>
                 <div class="pattern-item">
                     <span class="rank">2</span>
-                    <span class="pt-text"><strong>Distance shown ≠ actual</strong>Bike/straight-line distance gap drives rejections &amp; costs 3W ~₹90/order.</span>
+                    <span class="pt-text"><strong>Distance shown ≠ actual</strong>Trip shows less distance than the real route — drivers travel farther than paid for, costing them money.</span>
                 </div>
                 <div class="pattern-item">
                     <span class="rank">3</span>
-                    <span class="pt-text"><strong>Unpaid work &amp; low volume</strong>Unpaid wait/load, thin order flow — drivers drift to Porter for pay &amp; volume.</span>
+                    <span class="pt-text"><strong>Thin order flow</strong>Too few orders — drivers drift to Porter for higher volume.</span>
                 </div>
             </div>
             <div class="patterns-group good">
-                <div class="group-label">● Top 3 Working Well</div>
+                <div class="group-label">● Top Working Well</div>
                 <div class="pattern-item">
                     <span class="rank">1</span>
                     <span class="pt-text"><strong>Slots are the retention hook</strong>2W drivers earn more &amp; stay loyal for guaranteed income.</span>
                 </div>
                 <div class="pattern-item">
                     <span class="rank">2</span>
-                    <span class="pt-text"><strong>Trip Radar has real pull</strong>Praised unprompted by 3W driver — a browseable, pull-based order view drivers want.</span>
-                </div>
-                <div class="pattern-item">
-                    <span class="rank">3</span>
-                    <span class="pt-text"><strong>Earnings clarity &amp; on-time</strong>Earnings understood once learned; engaged drivers hit 98–100% on-time.</span>
+                    <span class="pt-text"><strong>Trip Radar has real pull</strong>Drivers like Trip Radar because it gives them the flexibility to choose trips themselves.</span>
                 </div>
             </div>
         </div>
@@ -1230,9 +1226,6 @@
                 <div class="tension-card" style="margin-top: 12px;">
                     <p><strong>Trip Radar is loved and gamed at the same time.</strong> Loknath praises Trip Radar as one of the few genuinely useful features — yet the same mechanism drives the surge loophole (reject long orders, wait for surge to climb, then accept). Investing in Trip Radar and fixing deterministic surge escalation have to be designed together, or improving one worsens the other.</p>
                 </div>
-                <div class="tension-card" style="margin-top: 12px;">
-                    <p><strong>Segment split: 2W-Star vs 3W-non-Star.</strong> The retention story diverges by segment. 2W Star drivers stay for Slots; the 3W non-Star driver has no Slots access, gets ~1 order/hour, and stays only for occasional well-priced orders. Solutions tuned for the 2W-Star majority (Slots) don't reach the 3W/non-Star segment at all.</p>
-                </div>
             </div>
 
             <!-- PM Lens Mapping -->
@@ -1242,55 +1235,56 @@
                     <div class="lens-item">
                         <h5>App-solvable</h5>
                         <ul>
-                            <li>Swipe reliability + fallback tap; fix trip-end hang &amp; auto-logout</li>
-                            <li>Route-based, vehicle-aware distance in broadcast</li>
-                            <li>In-app surge / demand zones</li>
-                            <li>Cancellation reason &amp; attribution visibility</li>
-                            <li>Effective ₹/km on broadcast card</li>
-                            <li>SOS / emergency button</li>
-                            <li>Self-serve bank-detail editing</li>
-                            <li>Wallet wait-time itemization</li>
-                            <li>In-app onboarding / coachmarks</li>
+                            <li>Make the swipe-to-complete reliable, add a tap option, and fix trips that freeze at the end or log drivers out</li>
+                            <li>Show the real driving distance for the driver's vehicle, not a straight-line estimate</li>
+                            <li>Show where demand and surge pricing are high inside the app</li>
+                            <li>Show why an order was cancelled and who it was counted against</li>
+                            <li>Show the real earnings per km on the order card</li>
+                            <li>Add an SOS / emergency button</li>
+                            <li>Let drivers edit their own bank details</li>
+                            <li>Break down wait-time pay clearly in the wallet</li>
+                            <li>Add in-app guidance and tips for new drivers</li>
+                            <li>Show a "package ready" signal from the merchant before the driver arrives</li>
                         </ul>
                     </div>
                     <div class="lens-item">
                         <h5>Ops-solvable</h5>
                         <ul>
-                            <li>Support inequity &amp; reachability</li>
-                            <li>Language-based routing (Kannada) + email SLAs</li>
-                            <li>Merchant readiness signals</li>
-                            <li>Oversized-package handling</li>
+                            <li>Make support easier to reach and fair for every driver</li>
+                            <li>Provide support agents in the driver's own language (e.g. Kannada) and set clear response times</li>
                         </ul>
                     </div>
                     <div class="lens-item">
                         <h5>Economics-solvable</h5>
                         <ul>
-                            <li>Porter fare parity (esp. long distance)</li>
-                            <li>Paid loading/unloading (labour) feature</li>
-                            <li>Pickup-km &amp; wait-time compensation</li>
-                            <li>Extra-distance compensation</li>
-                            <li>Achievable (non-volume) incentives; commission/meter-mode watch (Towner)</li>
-                            <li>Govt minimum-per-hour benchmark</li>
+                            <li>Match Porter's pay, especially on long-distance orders</li>
+                            <li>Pay drivers for loading and unloading effort</li>
+                            <li>Pay for distance travelled to pickup and time spent waiting</li>
+                            <li>Pay for extra distance when the route is longer than shown</li>
+                            <li>Set incentives drivers can actually reach, not just high-volume targets</li>
+                            <li>Watch new zero-commission competitors like Towner</li>
+                            <li>Benchmark earnings against the government minimum wage per hour</li>
                         </ul>
                     </div>
                     <div class="lens-item">
                         <h5>System-solvable</h5>
                         <ul>
-                            <li>Cancellation attribution logic (incl. 3W road restrictions)</li>
-                            <li>Non-deterministic surge to close the Trip Radar loophole</li>
-                            <li>Vehicle-type road restrictions &amp; vehicle-aware routing</li>
-                            <li>No assignment during logout transition</li>
-                            <li>Package-to-vehicle matching (3W vs Tata Ace)</li>
-                            <li>History-based driver assignment; return-trip / go-home routing</li>
+                            <li>Correctly attribute who caused a cancellation, including 3W road restrictions</li>
+                            <li>Make surge pricing unpredictable so drivers can't game Trip Radar by waiting</li>
+                            <li>Route around roads that specific vehicle types can't use</li>
+                            <li>Don't assign orders while a driver is logging out</li>
+                            <li>Match package size to the right vehicle type (3W vs Tata Ace)</li>
+                            <li>Assign orders based on a driver's past trips</li>
+                            <li>Offer return-trip / go-home orders at the end of the day</li>
                         </ul>
                     </div>
                 </div>
             </div>
 
             <div class="modal-section">
-                <h3>The Throughline</h3>
+                <h3>Summary of the Research</h3>
                 <div class="pattern-card">
-                    <p>The app breaks at core moments (swipe, distance, attribution, trip-end) and drivers route around it via ops calls and personal experience. Underneath sits an economics story: Porter and now zero-commission Towner win on volume, wait/labour pay, and transparency — so drivers treat Delhivery as a fallback and even game the Trip Radar surge to extract fair pay. Fixing the reliability and fairness basics — and giving 3W/non-Star drivers volume and a paid labour option — likely moves acceptance and cancellation more than any new feature.</p>
+                    <p>Most of what drivers told us traces back to two things. First, the app lets them down at the moments they can least afford it: the swipe to complete a trip, the distance it quotes, the way a cancellation gets pinned on them. When that happens they stop trusting the app and start managing around it, calling ops and going by their own read of the situation. Second, and this is the part that keeps them one foot out the door, the money is better elsewhere. Porter and the new zero-commission Towner hand out more orders, pay for the waiting and loading Delhivery ignores, and are honest about what a driver will take home. That is why Delhivery ends up as the backup app they open when nothing else is going, and why they will sit on the Trip Radar surge until the fare is worth their time. Fix the reliability, pay people fairly for the work they are already doing, and send more volume to the drivers earning the least, and you will see acceptance and cancellations shift before any new feature ever ships.</p>
                 </div>
             </div>
 
