@@ -120,6 +120,9 @@
         .pattern-card.positive { border-left-color: var(--green); }
         .pattern-card h4 { font-size: 0.92rem; color: var(--dark); margin: 0 0 5px; }
         .pattern-card p { font-size: 0.85rem; color: #444; margin: 0; line-height: 1.55; }
+        .pattern-card ul { margin: 0 0 8px; padding-left: 20px; }
+        .pattern-card ul li { font-size: 0.85rem; color: #444; line-height: 1.55; margin-bottom: 5px; }
+        .pattern-card ul li:last-child { margin-bottom: 0; }
         .pattern-card .evidence { font-size: 0.76rem; color: var(--gray); margin-top: 7px; font-style: italic; }
         .tension-card { background: var(--amber-light); border: 1px solid #FDE68A; border-radius: 8px; padding: 16px 18px; }
         .tension-card p { font-size: 0.85rem; color: #92400E; margin: 0; line-height: 1.55; }
@@ -1159,52 +1162,81 @@
                 </div>
                 <div class="pattern-card issue">
                     <h4>2. The distance shown is not the real distance</h4>
-                    <p>When an order comes in, the app shows a short straight-line distance, but the actual road distance is much longer. Drivers accept based on the wrong number, feel cheated, and start ignoring future orders. For a 3-wheeler driver the gap is 3–4 km, which works out to roughly ₹90 lost on every order.</p>
+                    <p>When an order comes in, the app shows a short straight-line distance, but the actual road distance is much longer. Drivers accept based on the wrong number, feel cheated, and start ignoring future orders. For the interviewed 3-wheeler driver, the gap was sometimes 3–4 km, which works out to roughly ₹90 lost on that order.</p>
                     <p class="evidence">Raised separately by 3 drivers, and now we have the numbers.</p>
                 </div>
                 <div class="pattern-card issue">
                     <h4>3. Drivers get blamed for cancellations that aren't theirs</h4>
-                    <p>When a driver is given two orders at once, one auto-cancels and the driver is blamed. If the customer cancels, it still counts against the driver. Even going offline can push an order to them that they're then forced to cancel. And some roads are closed to 3-wheelers (like Brigade Road), but the app doesn't warn them, so the customer cancels and the driver takes the hit. On top of all this, drivers can't even see who actually caused a cancellation. These marks decide whether a driver qualifies for guaranteed-income slots, so it directly affects their earnings.</p>
+                    <ul>
+                        <li>Sometimes a driver is mistakenly assigned two orders at once. When one auto-cancels, the cancellation is still counted against the driver.</li>
+                        <li>If the customer cancels an order, it still counts against the driver.</li>
+                        <li>Near the end of a slot, just as the driver is about to go offline, a new order comes in at the last minute. It's hard for them to deliver, so they cancel it.</li>
+                        <li>Some roads are closed to 3-wheelers (like Brigade Road), but the app doesn't warn them. The driver calls the customer to explain, the customer cancels the order, and it still counts as the driver's cancellation.</li>
+                        <li>On top of all this, drivers can't see who actually caused a cancellation — whether it was them or the customer — or the details of the cancelled trip.</li>
+                    </ul>
+                    <p>These cancellation counts decide whether a driver qualifies for minimum-guaranteed-income slots, so they directly affect their earnings.</p>
                     <p class="evidence">Raised by all 3 drivers — a major trust issue.</p>
                 </div>
                 <div class="pattern-card issue">
                     <h4>4. Drivers pay for costs the company should cover</h4>
-                    <p>Drivers cover a lot of unpaid work: the distance travelled to reach a pickup (slots only pay for the drop distance), 5–20 minutes waiting at the shop, the effort of loading and unloading, and extra distance caused by wrong addresses. Even when waiting time is paid, the app doesn't show when or how much. Porter sets the bar here — it pays for any extra travel over 1 km and shows a clear breakdown of everything.</p>
+                    <p>Drivers cover a lot of unpaid work:</p>
+                    <ul>
+                        <li>The distance travelled to reach a pickup (drivers say slots only pay for the drop distance).</li>
+                        <li>The effort of loading and unloading.</li>
+                        <li>Extra distance caused by wrong addresses.</li>
+                        <li>Waiting time at the shop. Even when waiting time is paid, the app doesn't show when or how much.</li>
+                        <li>Sometimes the customer makes the driver wait until the end of the free waiting time we allow, even when the parcel is already ready. Drivers feel that in that time they could have completed another order and earned more than the waiting charge we pay.</li>
+                    </ul>
+                    <p>Porter sets the bar here — it pays for any extra travel over 1 km and shows a clear breakdown of everything.</p>
                     <p class="evidence">Came up in every driver interview.</p>
                 </div>
                 <div class="pattern-card issue">
-                    <h4>9. No option to get paid for loading and unloading</h4>
-                    <p>Loading and unloading is unavoidable, takes time, and pays nothing. If a driver refuses to do it, the customer just cancels ("I'll cancel, you go") and the driver gets nothing. Porter turns this into paid work: the customer can add a loading charge that goes to the driver, high-effort orders are tagged so drivers can see them upfront, and it shows clearly during the trip. One 3-wheeler driver specifically asked us to build this.</p>
+                    <h4>5. No option to get paid for loading and unloading</h4>
+                    <ul>
+                        <li>Loading and unloading is often unavoidable for drivers. It takes time, and we pay nothing for it.</li>
+                        <li>If a driver refuses to do it, the customer simply cancels the order and the driver gets nothing.</li>
+                    </ul>
+                    <p>Porter turns this into paid work: the customer can add a loading charge that goes to the driver, and the driver can see it clearly upfront in the broadcast. Because it pays more, drivers actually prefer orders like these.</p>
                     <p class="evidence">From Loknath's interview — a proven feature we're missing.</p>
                 </div>
                 <div class="pattern-card issue">
-                    <h4>10. Drivers are gaming the Trip Radar surge</h4>
+                    <h4>6. Drivers are gaming the Trip Radar surge</h4>
                     <p>Drivers have learned that if they ignore an order, it moves to Trip Radar and the price slowly goes up. So they deliberately skip long-distance orders and wait for the price to climb before accepting. One driver said all his friends do this. Because the price increase is predictable, the system is quietly teaching drivers to reject orders first.</p>
                     <p class="evidence">From Loknath's interview — inflates payouts and hurts fulfillment.</p>
                 </div>
                 <div class="pattern-card issue">
-                    <h4>11. Too few orders for 3-wheelers, plus weak support</h4>
-                    <p>A 3-wheeler driver gets about 1 order an hour from Delhivery versus a steady stream from Porter, so Delhivery is only a backup for them. Support made it worse: waits over 10 minutes, calls cut short because the agent didn't speak Kannada, an email that was never answered, and no way to update bank details in the app — forcing a trip to the office for a tiny change. There's also no emergency or SOS button.</p>
-                    <p class="evidence">From Loknath's interview — order volume, support, and safety gaps.</p>
+                    <h4>7. Weak support and missing basics</h4>
+                    <p>When drivers reach out for help on non-live-trip issues, they don't get proper support. The 3-wheeler driver wanted to update his bank details, but the app has no option for drivers to edit this themselves. What followed shows how the support chain breaks down:</p>
+                    <ul>
+                        <li>He called the support team and waited over 10 minutes to get through.</li>
+                        <li>When the agent finally picked up and the driver started speaking in Kannada, the agent cut the call because they didn't understand Kannada, and asked him to send an email instead.</li>
+                        <li>He sent the email, but no one ever replied.</li>
+                        <li>In the end, he had to find the ops team's number and travel to the office just to change his bank details.</li>
+                        <li>There's also no emergency or SOS button for safety.</li>
+                    </ul>
+                    <p class="evidence">From Loknath's interview — support and safety gaps.</p>
                 </div>
                 <div class="pattern-card issue">
-                    <h4>5. Wrong pickup and drop locations</h4>
-                    <p>The app sometimes points to the wrong place, so the driver travels extra, the customer blames them, and no one pays for the wasted distance. Drivers get around it by calling the customer or going off landmarks they remember.</p>
+                    <h4>8. Wrong pickup and drop locations</h4>
+                    <p>Sometimes the app points to the wrong place, and sometimes the customer enters the wrong address, so the driver travels extra. The customer won't admit they entered the wrong address and blames the driver instead. The driver then has to get the correct address from the customer and drive there, and no one pays for the wasted distance.</p>
                     <p class="evidence">Both drivers mentioned it; Porter pays for this extra travel.</p>
                 </div>
                 <div class="pattern-card issue">
-                    <h4>6. No way to see where the demand is</h4>
-                    <p>Drivers move to busy areas on their own, using a mental map built from experience on other apps. They want the app to show busy zones and higher-pay areas, the way Rapido does. Experienced drivers manage; new drivers have nothing to go on.</p>
-                    <p class="evidence">Both drivers; the ops team confirms drivers rely on guesswork.</p>
+                    <h4>9. Too few orders, and no way to see where the demand is</h4>
+                    <p>Drivers get too few orders from Delhivery, so it stays a backup rather than their main app:</p>
+                    <ul>
+                        <li>The 3-wheeler driver gets about 1 order an hour from Delhivery, while Porter gives a steady, back-to-back stream — so Delhivery is only a fallback for him.</li>
+                        <li>The 2-wheeler drivers also get only a few orders. Even as slot drivers, they want to do more but aren't getting enough from us — and when they move to slightly outer areas, they get no orders at all.</li>
+                        <li>If drivers have fewer orders, they tend to move towards areas where they believe they might get more, based on their experience with other delivery apps. This is one of the reasons the "On-Demand Map" is the most requested feature among the drivers we interviewed.</li>
+                    </ul>
+                    <p class="evidence">Raised by the 3-wheeler driver and seen in both 2-wheeler drivers' order history — a shared volume problem.</p>
                 </div>
                 <div class="pattern-card issue">
-                    <h4>7. Support is easier to reach for some drivers than others</h4>
-                    <p>Drivers who happen to know someone on the ops team can skip the queue; everyone else goes through the slow general support line. And support is hardest to reach during a live trip — exactly when a problem is costing the driver money.</p>
-                    <p class="evidence">Seen in the ops process and in Murugan's live-trip experience.</p>
-                </div>
-                <div class="pattern-card issue">
-                    <h4>8. New drivers get no guidance</h4>
-                    <p>There's no in-app walkthrough for new drivers. They work it out on their own, and anything confusing turns into a support call. Training videos only help about half of them; the rest learn by doing their first few orders.</p>
+                    <h4>10. New drivers get no guidance</h4>
+                    <ul>
+                        <li>There's no in-app walkthrough for new drivers. They work it out on their own, and whenever something is confusing they call our support to clarify it — which drives up support calls on non-live-trip issues that could easily be avoided.</li>
+                        <li>In-app training videos and hand-hold guidance inside the app would help drivers in these cases and solve this issue.</li>
+                    </ul>
                     <p class="evidence">Both the ops team and drivers agree on this learn-by-doing gap.</p>
                 </div>
             </div>
@@ -1215,19 +1247,15 @@
 
                 <div class="pattern-card positive">
                     <h4>Slots keep 2-wheeler drivers loyal</h4>
-                    <p>Both 2-wheeler drivers value the guaranteed-income slots, and one of them (M Gowda) earns more from Delhivery specifically because of them. It's a real advantage over other apps when it works. The catch: lower-tier and 3-wheeler drivers can't access slots at all.</p>
+                    <p>Both 2-wheeler drivers value the guaranteed-income slots, and one of them (M Gowda) earns more from Delhivery specifically because of them. It's a real advantage over other apps when it works.</p>
                 </div>
                 <div class="pattern-card positive">
                     <h4>Drivers genuinely like Trip Radar</h4>
-                    <p>A 3-wheeler driver brought up Trip Radar on his own as one of the few features he really likes, because it lets him choose trips himself instead of waiting to be offered one. Porter has since copied the idea. It's worth investing in — and worth protecting from the surge-gaming problem noted above.</p>
+                    <p>A 3-wheeler driver brought up Trip Radar on his own as one of the few features he really likes, because it lets him choose trips himself instead of waiting to be offered one. Porter has since copied the idea. It's worth investing in — and worth protecting from the surge-gaming problem noted in the 6th issue.</p>
                 </div>
                 <div class="pattern-card positive">
                     <h4>Earnings are clear once drivers learn them</h4>
                     <p>The earnings page makes sense to drivers. The only early confusion is around cash orders — knowing what to collect from the customer — and that sorts itself out after a couple of orders.</p>
-                </div>
-                <div class="pattern-card positive">
-                    <h4>Drivers who work deliver on time</h4>
-                    <p>Active drivers hit 98–100% on-time delivery. So the real problem isn't whether drivers can do the job — it's getting them to accept orders in the first place. The interview evidence matches what the data shows.</p>
                 </div>
             </div>
 
@@ -1235,16 +1263,16 @@
             <div class="modal-section">
                 <h3>Top Requested Features</h3>
                 <div class="pattern-card positive">
-                    <h4>1. Pay for loading and unloading</h4>
-                    <p>Let the customer add a loading charge that goes to the driver, and flag these orders upfront so drivers know the effort involved. Drivers do this work for free today, and Porter already pays for it.</p>
-                </div>
-                <div class="pattern-card positive">
-                    <h4>2. Show where the orders are</h4>
+                    <h4>1. Show where the orders are (Demand map)</h4>
                     <p>A live map of busy areas and higher-pay zones inside the app, so drivers know where to go instead of guessing. Both drivers asked for something like Rapido's demand map.</p>
                 </div>
                 <div class="pattern-card positive">
+                    <h4>2. Pay for loading and unloading</h4>
+                    <p>Let the customer add a loading charge that goes to the driver, and flag these orders upfront so drivers know the effort involved. Drivers do this work for free today, and Porter already pays for it.</p>
+                </div>
+                <div class="pattern-card positive">
                     <h4>3. Good help and support</h4>
-                    <p>Support that's easy to reach and actually helps — short wait times, agents who speak the driver's language, and quick answers during a live trip. Today drivers wait over 10 minutes, get calls cut short over a language mismatch, and some can only get help if they personally know someone on the team.</p>
+                    <p>Support that's easy to reach and actually helps — short wait times, agents who speak the driver's language, and quick answers during a live trip. Drivers love how Porter's help chat feature works.</p>
                 </div>
             </div>
 
@@ -1315,7 +1343,12 @@
             <div class="modal-section">
                 <h3>Summary of the Research</h3>
                 <div class="pattern-card">
-                    <p>Most of what drivers told us traces back to two things. First, the app lets them down at the moments they can least afford it: the swipe to complete a trip, the distance it quotes, the way a cancellation gets pinned on them. When that happens they stop trusting the app and start managing around it, calling ops and going by their own read of the situation. Second, and this is the part that keeps them one foot out the door, the money is better elsewhere. Porter and the new zero-commission Towner hand out more orders, pay for the waiting and loading Delhivery ignores, and are honest about what a driver will take home. That is why Delhivery ends up as the backup app they open when nothing else is going, and why they will sit on the Trip Radar surge until the fare is worth their time. Fix the reliability, pay people fairly for the work they are already doing, and send more volume to the drivers earning the least, and you will see acceptance and cancellations shift before any new feature ever ships.</p>
+                    <p>Almost everything drivers told us comes down to two problems:</p>
+                    <ul>
+                        <li><strong>The app fails at key moments.</strong> The main actions a driver needs — swiping to finish a trip, the delivery distance the app shows, and who gets blamed when an order is cancelled — often don't work correctly. When this happens, drivers stop trusting the app, call our support team to fix it for them, and start relying on their own judgment instead.</li>
+                        <li><strong>Drivers earn more on other apps.</strong> Competitors like Porter (and the new Towner) give more orders, pay for waiting and loading work that we don't pay for, and are clear about how much a driver will actually take home. So drivers treat us as a backup app they open only when no other work is available.</li>
+                    </ul>
+                    <p><strong>What would move the needle:</strong> make the app reliable, pay drivers fairly for work they already do (like waiting and loading), and send more orders to the drivers earning the least. Getting these basics right will improve how many orders drivers accept and reduce cancellations — even before we build any new feature.</p>
                 </div>
             </div>
 
